@@ -1,15 +1,20 @@
 {
   "name": "bootstrap",
+  "bin": {
+    "bootstrap": "./dist/index.js"
+  },
   "version": "0.0.1",
   "description": "Bootstraps projects with common settings I like",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "tsc -w"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@types/node": "^22.15.19",
     "typescript": "^5.8.3"
   }
 }
