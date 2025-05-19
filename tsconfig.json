@@ -10,6 +10,9 @@
     "esModuleInterop": true,
     "skipLibCheck": true,
     "moduleResolution": "node16",
-    "outDir": "dist"
-  }
+    "outDir": "dist",
+    "rootDir": "src",
+    "sourceMap": true
+  },
+  "exclude": ["dist", "node_modules"]
 }

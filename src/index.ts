@@ -1,16 +1,23 @@
 #! /usr/bin/env node
 
-import { Command } from "commander";
+import { Plop, run } from "plop";
 
-// Declare program
-const program = new Command();
+import { dirname } from "node:path";
+import { fileURLToPath } from "node:url";
+import path from "node:path";
 
-// Add actions to the CLI
-program
-  .action(() => {
-    console.log("Loaded commander");
-  })
-  .description("Scaffolds projects with @benjymoses preferred defaults");
+const __dirname = dirname(fileURLToPath(import.meta.url));
 
-//Execute the CLI with the provided arguments
-program.parse(process.argv);
+Plop.prepare(
+  {
+    configPath: path.join(__dirname, "./plopfile.js"),
+  },
+  (env) =>
+    Plop.execute(env, (env) => {
+      const options = {
+        ...env,
+        dest: process.cwd(),
+      };
+      return run(options, undefined, true);
+    })
+);
