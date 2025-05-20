@@ -1,5 +1,11 @@
 # bootstrap
 
+## 0.1.7
+
+### Patch Changes
+
+- 53e8d5e: Tested a local change as well as a changeset
+
 ## 0.1.6
 
 ### Patch Changes
