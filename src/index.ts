@@ -1,6 +1,7 @@
 #! /usr/bin/env node
 
-import { Plop, run } from "plop";
+// import { Plop, run } from "plop";
+const { Plop, run } = await import("plop");
 
 import { dirname } from "node:path";
 import { fileURLToPath } from "node:url";

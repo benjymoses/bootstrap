@@ -11,9 +11,9 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "tsc -w",
     "relink": "npm unlink bootstrap && npm link",
-    "build": "tsup --format esm --dts",
+    "build": "tsc",
     "version": "npx -p @changesets/cli changeset version",
-    "release": "npm run build && npx -p @changesets/cli changeset publish"
+    "release": "npm run build && npx -p @changesets/cli changeset"
   },
   "tsup": {
     "clean": true,
