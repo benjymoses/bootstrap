@@ -1,5 +1,11 @@
 # bootstrap
 
+## 0.1.1
+
+### Patch Changes
+
+- d1bc8d9: Fixed scripts for changeset releases
+
 ## 0.1.0
 
 ### Minor Changes
