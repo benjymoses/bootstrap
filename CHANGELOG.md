@@ -1,5 +1,13 @@
 # bootstrap
 
+## 0.1.11
+
+### Patch Changes
+
+- 3ca71bc: Added build step into workflow job
+- e556bab: Fixed error in build command
+- f03c014: Removed "with" from release.yml
+
 ## 0.1.10
 
 ### Patch Changes
