@@ -1,5 +1,11 @@
 # bootstrap
 
+## 0.1.14
+
+### Patch Changes
+
+- 13cc116: Reverted to original set up in line with docs
+
 ## 0.1.13
 
 ### Patch Changes
