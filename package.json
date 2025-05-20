@@ -1,5 +1,5 @@
 {
-  "name": "bootstrap",
+  "name": "@benjymoses/bootstrap",
   "bin": {
     "bootstrap": "./dist/index.js"
   },
