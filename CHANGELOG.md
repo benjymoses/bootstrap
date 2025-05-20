@@ -1,5 +1,11 @@
 # bootstrap
 
+## 0.1.13
+
+### Patch Changes
+
+- bfb2f75: Removed build step and modified publish job to just perform build
+
 ## 0.1.12
 
 ### Patch Changes
