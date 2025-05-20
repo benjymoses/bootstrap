@@ -1,5 +1,11 @@
 # bootstrap
 
+## 0.1.10
+
+### Patch Changes
+
+- c60502a: Debugging actions
+
 ## 0.1.9
 
 ### Patch Changes
