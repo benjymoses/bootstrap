@@ -1,5 +1,11 @@
 # bootstrap
 
+## 0.1.3
+
+### Patch Changes
+
+- 3ba7f36: Still debugging publishing process
+
 ## 0.1.2
 
 ### Patch Changes
