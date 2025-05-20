@@ -28,7 +28,7 @@ jobs:
         run: npm ci
 
       - name: Build dist
-        run: npm build
+        run: npm run build
 
       - name: Create Release Pull Request or Publish to npm
         id: changesets
