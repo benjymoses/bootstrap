@@ -1,5 +1,11 @@
 # bootstrap
 
+## 0.1.5
+
+### Patch Changes
+
+- cb04d69: Still attempting to fix changesets publishing process
+
 ## 0.1.4
 
 ### Patch Changes
