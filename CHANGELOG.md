@@ -1,5 +1,11 @@
 # bootstrap
 
+## 0.1.9
+
+### Patch Changes
+
+- 4e0bfc8: Testing after changing release script
+
 ## 0.1.8
 
 ### Patch Changes
