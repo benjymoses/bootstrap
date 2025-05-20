@@ -1,5 +1,11 @@
 # bootstrap
 
+## 0.1.16
+
+### Patch Changes
+
+- dee2f13: Fixed accidental edit of release script
+
 ## 0.1.15
 
 ### Patch Changes
