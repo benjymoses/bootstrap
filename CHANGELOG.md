@@ -1,5 +1,11 @@
 # bootstrap
 
+## 0.1.15
+
+### Patch Changes
+
+- 33f0a24: Edited build process for plop
+
 ## 0.1.14
 
 ### Patch Changes
