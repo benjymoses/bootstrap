@@ -1,5 +1,11 @@
 # bootstrap
 
+## 0.1.17
+
+### Patch Changes
+
+- bee77b5: Moved plop to dependencies from devDeps
+
 ## 0.1.16
 
 ### Patch Changes
