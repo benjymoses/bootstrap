@@ -1,7 +1,7 @@
 {
   "name": "@benjymoses/bootstrap",
   "bin": {
-    "bootstrap": "./dist/index.js"
+    "bootstrap": "dist/index.js"
   },
   "version": "0.1.2",
   "description": "Bootstraps projects with common settings I like",
