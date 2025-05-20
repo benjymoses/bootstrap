@@ -13,7 +13,7 @@
     "relink": "npm unlink bootstrap && npm link",
     "build": "tsc",
     "version": "npx -p @changesets/cli changeset version",
-    "release": "npm run build && npx -p @changesets/cli changeset"
+    "release": "npm run build && npx -p @changesets/cli changeset publish"
   },
   "tsup": {
     "clean": true,
