@@ -1,5 +1,11 @@
 # bootstrap
 
+## 0.1.6
+
+### Patch Changes
+
+- 86034cc: Test change
+
 ## 0.1.5
 
 ### Patch Changes
