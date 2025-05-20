@@ -12,8 +12,9 @@
     "dev": "tsc -w",
     "relink": "npm unlink bootstrap && npm link",
     "build": "tsup --format esm --dts",
-    "version": "npx run changeset version",
-    "release": "npm run build && npm run version && npx changeset publish"
+    "version": "npx -p @changesets/cli -p @changesets/changelog-github changeset version",
+    "release": "npm run build && npm run version && npm run publish",
+    "publish": "npx -p @changesets/cli -p @changesets/changelog-github changeset publish"
   },
   "tsup": {
     "clean": true,
