@@ -1,5 +1,11 @@
 # bootstrap
 
+## 0.1.12
+
+### Patch Changes
+
+- 116e560: Reverted to original set up
+
 ## 0.1.11
 
 ### Patch Changes
