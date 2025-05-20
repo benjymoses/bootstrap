@@ -1,5 +1,11 @@
 # bootstrap
 
+## 0.1.2
+
+### Patch Changes
+
+- 00068ff: Debugging npm release process using changesets
+
 ## 0.1.1
 
 ### Patch Changes
