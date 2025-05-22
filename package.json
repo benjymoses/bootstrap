@@ -12,7 +12,7 @@
     "dev": "concurrently \"tsc -w\" \"nodemon --watch src/templates --exec npm run stage-templates --ext '*'\"",
     "release": "npm run build && npx -p @changesets/cli changeset publish",
     "relink": "npm unlink bootstrap && npm link",
-    "stage-templates": "cp -r src/templates lib/",
+    "stage-templates": "cp -r src/templates lib/templates",
     "start": "cd lib && npx plop",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
