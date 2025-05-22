@@ -10,10 +10,10 @@
     "esModuleInterop": true,
     "skipLibCheck": true,
     "moduleResolution": "nodenext",
-    "outDir": "dist",
+    "outDir": "lib",
     "rootDir": "src",
     "sourceMap": true,
     "declaration": true
   },
-  "exclude": ["dist", "node_modules"]
+  "exclude": ["lib", "node_modules", "src/templates"]
 }

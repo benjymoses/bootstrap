@@ -7,6 +7,6 @@ export function generateTsconfig(path: string, option: string): ActionType {
   return {
     type: "add",
     path: `${path}/exampleOutput/tsconfig.json`,
-    templateFile: `src/templates/typescript/${fileSource}`,
+    templateFile: `./templates/typescript/${fileSource}`,
   };
 }

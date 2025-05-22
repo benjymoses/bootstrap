@@ -4,8 +4,7 @@ import path from "path";
 import { generateTsconfig } from "./typescript/generateTsconfig.js";
 
 const currentWorkingDirectory = process.cwd();
-const pathSuffix =
-  path.basename(currentWorkingDirectory) === "dist" ? ".." : ""; // Back to root if in dist folder during development
+const pathSuffix = path.basename(currentWorkingDirectory) === "lib" ? ".." : ""; // Back to root if in lib (build) folder during development
 const workingPath = path.join(currentWorkingDirectory, pathSuffix);
 
 console.log(workingPath);

@@ -1,35 +1,28 @@
 {
   "name": "@benjymoses/bootstrap",
   "bin": {
-    "bootstrap": "dist/index.js"
+    "bootstrap": "lib/index.js"
   },
   "version": "0.2.0",
   "description": "Bootstraps projects with common settings I like",
-  "main": "dist/index.js",
+  "main": "lib/index.js",
   "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "tsc -w",
-    "relink": "npm unlink bootstrap && npm link",
-    "build": "tsc",
-    "version": "npx -p @changesets/cli changeset version",
+    "build": "tsc && npm run stage-templates",
+    "dev": "concurrently \"tsc -w\" \"nodemon --watch src/templates --exec npm run stage-templates --ext '*'\"",
     "release": "npm run build && npx -p @changesets/cli changeset publish",
-    "start": "cd dist && npx plop"
+    "relink": "npm unlink bootstrap && npm link",
+    "stage-templates": "cp -r src/templates lib/",
+    "start": "cd lib && npx plop",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "tsup": {
     "clean": true,
     "souremap": true,
     "splitting": false,
-    "entry": [
-      "src/index.ts"
-    ]
+    "entry": ["src/index.ts"]
   },
-  "files": [
-    "/dist",
-    "package.json",
-    "LICENSE",
-    "README.md"
-  ],
+  "files": ["/lib", "package.json", "LICENSE", "README.md"],
   "keywords": [],
   "author": "",
   "license": "MIT",
@@ -39,10 +32,10 @@
   },
   "devDependencies": {
     "@changesets/cli": "^2.29.4",
-    "@types/inquirer": "^9.0.8",
     "@types/minimist": "^1.2.5",
     "@types/node": "^22.15.19",
-    "tsup": "^8.5.0",
+    "concurrently": "^9.1.2",
+    "nodemon": "^3.1.10",
     "tsx": "^4.19.4",
     "typescript": "^5.8.3"
   }
