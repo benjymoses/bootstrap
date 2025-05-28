@@ -1,0 +1,24 @@
+## macOS
+.DS_Cache
+.DS_Store
+.Trashes
+
+## NodeJs / TypeScript
+node_modules
+*.js
+*.d.ts
+!jest.config.js
+coverage
+test-reports
+tsconfig.tsbuildinfo
+
+## Project-specific
+build
+
+# CDK asset staging directory
+.cdk.staging
+cdk.out
+
+## Tool Specific
+.lldebugger
+

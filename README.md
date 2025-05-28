@@ -9,6 +9,7 @@ Bootstraps projects with common settings I like
 - [ ] set up eslint
 - [ ] set up prettier
 - [ ] set up TypeScript jest
+- [ ] init git and do first commit with cz
 
 ## Learning
 
