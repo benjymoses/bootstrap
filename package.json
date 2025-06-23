@@ -14,18 +14,38 @@
     "relink": "npm unlink bootstrap && npm link",
     "stage-templates": "cp -r src/templates lib/",
     "start": "cd lib && npx plop",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "commit": "cz",
+    "commitlint": "commitlint --edit"
   },
   "tsup": {
     "clean": true,
     "souremap": true,
     "splitting": false,
-    "entry": ["src/index.ts"]
+    "entry": [
+      "src/index.ts"
+    ]
   },
-  "files": ["/lib", "package.json", "LICENSE", "README.md"],
+  "files": [
+    "/lib",
+    "package.json",
+    "LICENSE",
+    "README.md"
+  ],
   "keywords": [],
   "author": "",
   "license": "MIT",
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-emoji-conventional",
+      "useGitmojis": true
+    }
+  },
+  "commitlint": {
+    "extends": [
+      "gitmoji"
+    ]
+  },
   "dependencies": {
     "minimist": "^1.2.8",
     "plop": "^4.0.1"
@@ -37,6 +57,11 @@
     "concurrently": "^9.1.2",
     "nodemon": "^3.1.10",
     "tsx": "^4.19.4",
-    "typescript": "^5.8.3"
+    "typescript": "^5.8.3",
+    "@commitlint/cli": "^19.8.1",
+    "commitizen": "^4.3.1",
+    "commitlint-config-gitmoji": "^2.3.1",
+    "conventional-changelog": "^7.0.2",
+    "cz-emoji-conventional": "^1.2.1"
   }
 }

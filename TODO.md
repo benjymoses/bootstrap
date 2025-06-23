@@ -3,4 +3,5 @@
 - Set up git: Creates a skeleton .gitignore and initialises a new git repository
 - Set up eslint: Sets up eslint with defaults
 - Set up Prettier: Sets up Prettier with defaults
-- Set up Jest: Sets up Jest with sensible TS defaults
+- Set up Vitest: Sets up Jest with sensible TS defaults
+- cz and emojis
