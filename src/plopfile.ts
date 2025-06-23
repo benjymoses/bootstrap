@@ -9,6 +9,15 @@ const workingPath = path.join(currentWorkingDirectory, pathSuffix);
 
 console.log(workingPath);
 
+// import { fileURLToPath } from "url";
+// import path from "path";
+// const __filename = fileURLToPath(import.meta.url);
+// const __dirname = path.dirname(__filename);
+
+import { tsActions } from "./actions/ts/index.js";
+
+const OUTPUT_PREFIX = "devGen";
+
 export default function (plop: NodePlopAPI) {
   plop.setWelcomeMessage("Please choose from an option below");
 
