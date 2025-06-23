@@ -1,0 +1,35 @@
+{ 
+    "name": "{{projectName}}", 
+    "version": "0.0.1", 
+    "description": "{{projectDescription}}",
+    "main": "src/index.ts", 
+    "type": "module", 
+    "scripts": { 
+        "commit": "cz",
+        "commitlint": "commitlint --edit"
+    },
+    "keywords": [],
+    "author": {
+        "name": "{{authorName}}"
+    },
+    "license": "MIT",
+    "config": {
+        "commitizen": {
+        "path": "./node_modules/cz-emoji-conventional",
+        "useGitmojis": true
+        }
+    },
+    "commitlint": {
+        "extends": ["gitmoji"]
+    },
+    "devDependencies": {
+        "@commitlint/cli": "^19.8.1",
+        "commitizen": "^4.3.1",
+        "commitlint-config-gitmoji": "^2.3.1",
+        "cz-emoji-conventional": "^1.2.1",
+        "conventional-changelog": "^7.0.2",
+        "typescript": "^5.8.3",
+        "eslint": "^9",
+        "@types/node": "^22.15.23"
+    }
+}

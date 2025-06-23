@@ -1,7 +1,77 @@
-- Create LTS 'tsconfig.json: Uses https://github.com/tsconfig/bases node-lts template for tsconfig.json
-- Create 'package.json: Creates a skeleton package.json
-- Set up git: Creates a skeleton .gitignore and initialises a new git repository
-- Set up eslint: Sets up eslint with defaults
-- Set up Prettier: Sets up Prettier with defaults
-- Set up Vitest: Sets up Jest with sensible TS defaults
-- cz and emojis
+# Scope
+
+## MVP
+
+- [ ] Basics
+
+  - [ ] ask questions on _projectName_, _projectDescription_, _outDir_
+  - [ ] copy and customise package.json - get _authorName_ from git config
+  - [ ] copy and customise tsconfig.json - use _outDir_
+  - [ ] copy and custmise gitignore - use _outDir_
+
+- [ ] Testing
+
+  - [ ] hint that Vitest is the only default option
+  - [ ] add scripts (test-> "vitest run" and test:watch-> "vitest")
+  - [ ] add a default test that validates the test runner is working
+
+- [ ] Always last
+  - [ ] init git and perform initial commit
+  - [ ] add Husky for git hooks to ensure conventional commits
+
+## Next
+
+- [ ] Tests for the Bootstrap project itself
+
+## Future
+
+- [ ] eslint
+- [ ] prettier
+- [ ] git workflows, contributing, pr templates etc (+ npm publishing workflow)
+- [ ] test framework selection
+- [ ] turbo / monorepo bits
+- [ ] automated reset of git remote
+
+## Questions
+
+- ESBuild as standard?
+
+---
+
+# References
+
+## Husky
+
+"husky": "^9.1.7",
+
+"husky": {
+"hooks": {
+"prepare-commit-msg": "exec < /dev/tty && npx cz --hook || true"
+}
+}
+
+"prepare": "husky"
+
+## Turbo Repo
+
+"scripts": {
+"build": "turbo run build",
+"dev": "turbo run dev",
+"lint": "turbo run lint",
+"test": "turbo run test",
+"test:watch": "turbo run test:watch",
+}
+
+and turbo.json in root
+
+workspaces requires:
+
+"private": true,
+"packageManager": "npm@11.4.1", // <<--- needs setting dynamically
+
+"workspaces": [
+"apps/*",
+"packages/*"
+],
+
+consider constructing package.jsons for turbo packages on the fly
