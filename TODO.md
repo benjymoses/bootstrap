@@ -2,12 +2,17 @@
 
 ## MVP
 
-- [ ] Basics
+- [x] Basics
 
-  - [ ] ask questions on _projectName_, _projectDescription_, _outDir_
-  - [ ] copy and customise package.json - get _authorName_ from git config
-  - [ ] copy and customise tsconfig.json - use _outDir_
-  - [ ] copy and custmise gitignore - use _outDir_
+  - [x] ask questions on _projectName_, _projectDescription_, _outDir_
+  - [x] copy and customise package.json - get _authorName_ from git config
+  - [x] copy and customise tsconfig.json - use _outDir_
+  - [x] copy and custmise gitignore - use _outDir_
+
+- [x] Always last
+
+  - [x] init git and perform initial commit
+  - [x] add Husky for git hooks to ensure conventional commits
 
 - [ ] Testing
 
@@ -15,13 +20,10 @@
   - [ ] add scripts (test-> "vitest run" and test:watch-> "vitest")
   - [ ] add a default test that validates the test runner is working
 
-- [ ] Always last
-  - [ ] init git and perform initial commit
-  - [ ] add Husky for git hooks to ensure conventional commits
-
 ## Next
 
 - [ ] Tests for the Bootstrap project itself
+- [ ] opinionated starting scripts using nodemon or similar for dev / lint / prepare
 
 ## Future
 

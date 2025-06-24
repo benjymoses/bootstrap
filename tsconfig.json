@@ -15,5 +15,5 @@
     "sourceMap": true,
     "declaration": true
   },
-  "exclude": ["lib", "node_modules", "src/templates"]
+  "exclude": ["lib", "node_modules", "templates"]
 }

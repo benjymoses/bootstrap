@@ -1,5 +1,1 @@
-<<<<<<< HEAD
 **/*.hbs
-=======
-*.hbs
->>>>>>> 1496b22 (chore: added prettierignore for handlebars templates)

@@ -1,12 +1,19 @@
 import { ActionType } from "plop";
 
-export function generateTsconfig(path: string, option: string): ActionType {
-  const fileSource =
-    option === "opinionated" ? "tsconfig.json.hbs" : "tsconfig.json.hbs"; // TODO: find a method to copy down the base-lts to the templates folder
+type TsConfigProps = {
+  outDir: string;
+};
 
+export function generateTsconfig(
+  path: string,
+  props: TsConfigProps
+): ActionType {
   return {
     type: "add",
     path: `${path}/exampleOutput/tsconfig.json`,
-    templateFile: `./templates/typescript/${fileSource}`,
+    templateFile: `./templates/ts/basics/tsconfig.json.hbs`,
+    data: {
+      outDir: props.outDir,
+    },
   };
 }
