@@ -1,5 +1,5 @@
 import type { NodePlopAPI } from "plop";
-import { executeShellCommand } from "../../utils/executeShellCommand.js";
+import { executeShellCommand } from "../utils/executeShellCommand.js";
 
 const ACTION_NAME = "run-git-commands";
 
