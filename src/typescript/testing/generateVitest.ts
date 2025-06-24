@@ -1,6 +1,6 @@
 import type { NodePlopAPI, ActionType } from "plop";
 
-import { executeShellCommand } from "../../utils/executeShellCommand.js";
+import { executeShellCommand } from "../utils/executeShellCommand.js";
 
 type VitestProps = {
   outDir: string;
