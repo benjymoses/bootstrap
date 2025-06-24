@@ -16,6 +16,8 @@
 
 - [ ] Testing
 
+  - [ ] Need a better dev cycle that doesn't generate within this project (now I'm running git commands)
+
   - [ ] hint that Vitest is the only default option
   - [ ] add scripts (test-> "vitest run" and test:watch-> "vitest")
   - [ ] add a default test that validates the test runner is working
