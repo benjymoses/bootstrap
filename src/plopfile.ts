@@ -1,22 +1,35 @@
 import { NodePlopAPI } from "plop";
 import path from "path";
 
-import { generateTsconfig } from "./typescript/generateTsconfig.js";
-import { generatePackageJson } from "./typescript/generatePackageJson.js";
-import { generateGitignore } from "./typescript/generateGitignore.js";
-import { generateIndex } from "./typescript/generateIndex.js";
-import { generateHusky } from "./typescript/generateHusky.js";
+import { generateTsconfig } from "./typescript/basics/generateTsconfig.js";
+import { generatePackageJson } from "./typescript/basics/generatePackageJson.js";
+import { generateGitignore } from "./typescript/basics/generateGitignore.js";
+import { generateIndex } from "./typescript/basics/generateIndex.js";
+import { generateHusky } from "./typescript/basics/generateHusky.js";
 // import { generateVitest } from "";
+
+import {
+  runGitCommandsAction,
+  runGitCommandsActionType,
+} from "./typescript/basics/runGitCommands.js";
+
+import {
+  addVitestAction,
+  addVitestActionType,
+} from "./typescript/testing/generateVitest.js";
 
 const currentWorkingDirectory = process.cwd();
 const pathSuffix = path.basename(currentWorkingDirectory) === "lib" ? ".." : ""; // Back to root if in lib (build) folder during dev
 const workingPath = path.join(currentWorkingDirectory, pathSuffix);
-console.log(workingPath);
 
 export default function (plop: NodePlopAPI) {
   plop.setWelcomeMessage("Please choose from an option below");
 
-  plop.load("plop-pack-git-init");
+  // plop.load("plop-pack-git-init");
+
+  // setup custom actions
+  runGitCommandsActionType(plop);
+  addVitestActionType(plop);
 
   plop.setGenerator("Which language are you working in?", {
     prompts: [
@@ -93,7 +106,7 @@ export default function (plop: NodePlopAPI) {
           })
         );
         actions.push(generateGitignore(workingPath, { outDir }));
-        // actions.push(generateVitest(workingPath));
+        actions.push(...addVitestAction(workingPath, outDir));
       }
 
       if (answers.tsoperation === "use-customised") {
@@ -116,18 +129,15 @@ export default function (plop: NodePlopAPI) {
         if (answers.customisations.includes("generate-gitignore")) {
           actions.push(generateGitignore(workingPath, { outDir }));
         }
-        // if (answers.customisations.includes("generate-vitest")) {
-        //   actions.push(generateVitest(workingPath));
-        // }
+        if (answers.customisations.includes("generate-vitest")) {
+          actions.push(...addVitestAction(workingPath, outDir));
+        }
       }
 
       // Always generate an index, run git actions, then add Husky
       actions.push(generateIndex(workingPath, { projectName }));
-      actions.push({
-        type: "gitInit",
-        path: workingPath,
-      });
       actions.push(generateHusky(workingPath));
+      actions.push(...runGitCommandsAction());
 
       return actions;
     },
