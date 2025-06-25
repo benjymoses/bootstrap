@@ -11,7 +11,7 @@ const ACTION_NAME = "add-vitest";
 export const addVitestActionType = (plop: NodePlopAPI) => {
   return plop.setActionType(ACTION_NAME, () => {
     executeShellCommand(
-      `npm pkg set scripts.test="vitest run" scripts.test:watch="vitest" devDependencies.vitest="^3.0.7" devDependencies.@vitest/coverage-istanbul="^3.0.7" devDependencies.@vitest/ui="^3.2.3"`
+      `npm pkg set scripts.test="vitest run" scripts.test:watch="vitest" scripts.test:ui="vitest --ui" scripts.test:coverage="vitest run --coverage" devDependencies.vitest="^3.0.7" devDependencies.@vitest/coverage-istanbul="^3.0.7" devDependencies.@vitest/ui="^3.2.3"`
     );
     return "Bringing in Vitest...";
   });
