@@ -8,7 +8,7 @@
   "main": "lib/index.js",
   "type": "module",
   "scripts": {
-    "build": "tsc && npm run stage-templates",
+    "build": "tsc && npm run stage-templates && chmod +x lib/index.js",
     "dev": "concurrently \"tsc -w\" \"nodemon --watch templates --exec npm run stage-templates --ext '*'\"",
     "release": "npm run build && npx -p @changesets/cli changeset publish",
     "relink": "npm unlink bootstrap && npm link",
