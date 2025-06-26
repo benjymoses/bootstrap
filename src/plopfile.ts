@@ -1,35 +1,28 @@
 import { NodePlopAPI } from "plop";
+
+// Bootstrap project actions
+import {
+  bootstrapBasicActions,
+  bootstrapCustomActions,
+} from "./typescript/actionsLibrary.js";
+
+// Shared type for prompt answers
+import type { BootstrapAnswers } from "./typescript/types/bootstrapAnswers.js";
+
+// Set up pathing for Plop
 import path from "path";
-
-import { generateTsconfig } from "./typescript/basics/generateTsconfig.js";
-import { generatePackageJson } from "./typescript/basics/generatePackageJson.js";
-import { generateGitignore } from "./typescript/basics/generateGitignore.js";
-import { generateIndex } from "./typescript/basics/generateIndex.js";
-import { generateHusky } from "./typescript/basics/generateHusky.js";
-// import { generateVitest } from "";
-
-import {
-  runGitCommandsAction,
-  runGitCommandsActionType,
-} from "./typescript/basics/runGitCommands.js";
-
-import {
-  addVitestAction,
-  addVitestActionType,
-} from "./typescript/testing/generateVitest.js";
-
 const currentWorkingDirectory = process.cwd();
 const pathSuffix = path.basename(currentWorkingDirectory) === "lib" ? ".." : ""; // Back to root if in lib (build) folder during dev
 const workingPath = path.join(currentWorkingDirectory, pathSuffix);
 
+// Main Plop function for plopfile
 export default function (plop: NodePlopAPI) {
   plop.setWelcomeMessage("Please choose from an option below");
 
-  // plop.load("plop-pack-git-init");
-
   // setup custom actions
-  runGitCommandsActionType(plop);
-  addVitestActionType(plop);
+  for (const customAction of Object.values(bootstrapCustomActions)) {
+    customAction.actionSetup(plop);
+  }
 
   plop.setGenerator("Which language are you working in?", {
     prompts: [
@@ -48,7 +41,7 @@ export default function (plop: NodePlopAPI) {
           { name: "Use recommended defaults", value: "use-defaults" },
           { name: "Select task stacks", value: "use-customised" },
         ],
-        when: (answers) => answers.language === "typescript",
+        when: (answers: any) => answers.language === "typescript",
       },
       {
         type: "checkbox",
@@ -60,7 +53,7 @@ export default function (plop: NodePlopAPI) {
           { name: ".gitignore", value: "generate-gitignore" },
           // { name: "Add Vitest with defaults", value: "generate-vitest" },
         ],
-        when: (answers) => answers.tsoperation === "use-customised",
+        when: (answers: any) => answers.tsoperation === "use-customised",
       },
       {
         type: "input",
@@ -79,7 +72,7 @@ export default function (plop: NodePlopAPI) {
         default: "dist",
       },
     ],
-    actions: (answers) => {
+    actions: (answers:any) => {
       const actions = [];
       if (!answers) return [{ type: "abort" }];
 
@@ -90,54 +83,71 @@ export default function (plop: NodePlopAPI) {
       )
         return [{ type: "abort" }];
 
-      const { projectName, projectDescription, outDir } = answers;
+      const bootstrapAnswers: BootstrapAnswers = answers as BootstrapAnswers;
 
       if (answers.tsoperation === "use-defaults") {
-        actions.push(
-          generateTsconfig(workingPath, {
-            outDir,
-          })
-        );
-        actions.push(
-          generatePackageJson(workingPath, {
-            projectName,
-            projectDescription,
-            outDir,
-          })
-        );
-        actions.push(generateGitignore(workingPath, { outDir }));
-        actions.push(...addVitestAction(workingPath, outDir));
+        // Add all basic actions
+        for (const basicAction of Object.values(bootstrapBasicActions)) {
+          actions.push(basicAction(workingPath, bootstrapAnswers));
+        }
+
+        // Add all custom actions apart from git which must run last
+        for (const [key, customAction] of Object.entries(
+          bootstrapCustomActions
+        )) {
+          if (key !== "runGitCommands") {
+            actions.push(
+              ...customAction.actionsList(workingPath, bootstrapAnswers)
+            );
+          }
+        }
       }
 
       if (answers.tsoperation === "use-customised") {
         if (answers.customisations.includes("generate-tsconfig")) {
           actions.push(
-            generateTsconfig(workingPath, {
-              outDir,
-            })
+            bootstrapBasicActions.generateTsconfig(
+              workingPath,
+              bootstrapAnswers
+            )
           );
         }
         if (answers.customisations.includes("generate-packagejson")) {
           actions.push(
-            generatePackageJson(workingPath, {
-              projectName,
-              projectDescription,
-              outDir,
-            })
+            bootstrapBasicActions.generatePackageJson(
+              workingPath,
+              bootstrapAnswers
+            )
           );
         }
         if (answers.customisations.includes("generate-gitignore")) {
-          actions.push(generateGitignore(workingPath, { outDir }));
+          actions.push(
+            bootstrapBasicActions.generateGitignore(
+              workingPath,
+              bootstrapAnswers
+            )
+          );
         }
         if (answers.customisations.includes("generate-vitest")) {
-          actions.push(...addVitestAction(workingPath, outDir));
+          actions.push(
+            ...bootstrapCustomActions.addVitest.actionsList(
+              workingPath,
+              bootstrapAnswers
+            )
+          );
         }
       }
 
-      // Always generate an index, run git actions, then add Husky
-      actions.push(generateIndex(workingPath, { projectName }));
-      actions.push(generateHusky(workingPath));
-      actions.push(...runGitCommandsAction());
+      // Always run git commands last
+      actions.push(...bootstrapCustomActions.runGitCommands.actionsList());
+
+      // Ending reminder to run `npm install`
+      actions.push("");
+      actions.push("");
+      actions.push("");
+      actions.push("================ REMEMBER ================");
+      actions.push("Run `npm install` to install dependencies");
+      actions.push("==========================================");
 
       return actions;
     },

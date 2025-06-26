@@ -1,9 +1,9 @@
-import { exec } from "child_process";
+import { execSync } from "child_process";
 
 export function executeShellCommand(command: string) {
   (async (command) => {
     try {
-      await exec(command);
+      await execSync(command);
     } catch (e) {
       console.error(e);
     }

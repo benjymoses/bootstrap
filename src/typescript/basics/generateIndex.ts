@@ -1,19 +1,16 @@
-import { ActionType } from "plop";
+import type { ActionType } from "plop";
+import type { BootstrapAnswers } from "../types/bootstrapAnswers.js";
 
-type GenerateIndexProps = {
-  projectName: string;
-};
-
-export function generateIndex(
+export const generateIndex = (
   path: string,
-  props: GenerateIndexProps
-): ActionType {
+  answers: BootstrapAnswers
+): ActionType => {
   return {
     type: "add",
-    path: `${path}/exampleOutput/src/index.ts`,
+    path: `${path}/src/index.ts`,
     templateFile: `./templates/ts/basics/index.ts.hbs`,
     data: {
-      projectName: props.projectName,
+      projectName: answers.projectName,
     },
   };
-}
+};

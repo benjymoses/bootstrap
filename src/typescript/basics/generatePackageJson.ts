@@ -1,11 +1,6 @@
-import { ActionType } from "plop";
+import type { ActionType } from "plop";
 import { execSync } from "child_process";
-
-type PackageJsonProps = {
-  projectName: string;
-  projectDescription: string;
-  outDir?: string; // not currently used
-};
+import { BootstrapAnswers } from "../types/bootstrapAnswers.js";
 
 // get git name from git config
 function getGitName(): string {
@@ -17,20 +12,20 @@ function getGitName(): string {
   }
 }
 
-export function generatePackageJson(
+export const generatePackageJson = (
   path: string,
-  props: PackageJsonProps
-): ActionType {
+  answers: BootstrapAnswers
+): ActionType => {
   const gitName = getGitName();
   return {
     type: "add",
-    path: `${path}/exampleOutput/package.json`,
+    path: `${path}/package.json`,
     templateFile: `./templates/ts/basics/package.json.hbs`,
     data: {
-      projectName: props.projectName,
-      projectDescription: props.projectDescription,
-      outDir: props.outDir,
+      projectName: answers.projectName,
+      projectDescription: answers.projectDescription,
+      outDir: answers.outDir,
       authorName: gitName,
     },
   };
-}
+};

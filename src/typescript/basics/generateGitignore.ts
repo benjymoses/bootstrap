@@ -1,19 +1,16 @@
-import { ActionType } from "plop";
+import type { ActionType } from "plop";
+import type { BootstrapAnswers } from "../types/bootstrapAnswers.js";
 
-type GitIgnoreProps = {
-  outDir: string;
-};
-
-export function generateGitignore(
+export const generateGitignore = (
   path: string,
-  props: GitIgnoreProps
-): ActionType {
+  answers: BootstrapAnswers
+): ActionType => {
   return {
     type: "add",
-    path: `${path}/exampleOutput/.gitignore`,
+    path: `${path}/.gitignore`,
     templateFile: `./templates/ts/basics/gitignore.hbs`,
     data: {
-      outDir: props.outDir,
+      outDir: answers.outDir,
     },
   };
-}
+};

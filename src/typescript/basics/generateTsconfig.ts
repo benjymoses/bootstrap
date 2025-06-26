@@ -1,19 +1,16 @@
-import { ActionType } from "plop";
+import type { ActionType } from "plop";
+import type { BootstrapAnswers } from "../types/bootstrapAnswers.js";
 
-type TsConfigProps = {
-  outDir: string;
-};
-
-export function generateTsconfig(
+export const generateTsconfig = (
   path: string,
-  props: TsConfigProps
-): ActionType {
+  answers: BootstrapAnswers
+): ActionType => {
   return {
     type: "add",
-    path: `${path}/exampleOutput/tsconfig.json`,
+    path: `${path}/tsconfig.json`,
     templateFile: `./templates/ts/basics/tsconfig.json.hbs`,
     data: {
-      outDir: props.outDir,
+      outDir: answers.outDir,
     },
   };
-}
+};
