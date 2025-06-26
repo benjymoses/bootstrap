@@ -1,5 +1,11 @@
 # bootstrap
 
+## 0.3.0
+
+### Minor Changes
+
+- 672ccbd: Created baseline of generators
+
 ## 0.2.0
 
 ### Minor Changes
