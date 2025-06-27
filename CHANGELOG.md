@@ -1,5 +1,11 @@
 # Bootstrap Changelog
 
+## [0.3.8](https://github.com/benjymoses/bootstrap/compare/v0.3.7...v0.3.8) (2025-06-27)
+
+### :bug: Bug Fixes
+
+* **ci:** fixing up github releases ([c8264e3](https://github.com/benjymoses/bootstrap/commit/c8264e3a91e375d701d1578f76c6b06d61cbc37e))
+
 ## [0.3.7](https://github.com/benjymoses/bootstrap/compare/v0.3.6...v0.3.7) (2025-06-27)
 
 ### :bug: Bug Fixes
