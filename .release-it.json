@@ -35,7 +35,6 @@
     "push": true
   },
   "npm": {
-    "publish": true,
-    "tag": "latest"
+    "publish": true
   }
 }
