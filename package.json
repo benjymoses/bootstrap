@@ -8,15 +8,16 @@
   "main": "lib/index.js",
   "type": "module",
   "scripts": {
-    "build": "tsc && npm run stage-templates && chmod +x lib/index.js",
-    "dev": "concurrently \"tsc -w\" \"nodemon --watch templates --exec npm run stage-templates --ext '*'\"",
-    "release": "npm run build && npx -p @changesets/cli changeset publish",
-    "relink": "npm unlink bootstrap && npm link",
+    "build": "tsc && pnpm stage-templates && chmod +x lib/index.js",
+    "dev": "concurrently \"tsc -w\" \"nodemon --watch templates --exec pnpm stage-templates --ext '*'\"",
+    "release": "pnpm build && npx -p @changesets/cli changeset publish",
+    "relink": "pnpm unlink bootstrap && pnpm link",
     "stage-templates": "cp -r templates lib/",
     "start": "cd lib && npx plop",
     "test": "echo \"Error: no test specified\" && exit 1",
     "commit": "cz",
-    "commitlint": "commitlint --edit"
+    "commitlint": "commitlint --edit",
+    "preinstall": "npx only-allow pnpm"
   },
   "tsup": {
     "clean": true,
