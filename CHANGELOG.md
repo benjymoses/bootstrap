@@ -1,5 +1,7 @@
 # Bootstrap Changelog
 
+## [0.3.3](https://github.com/benjymoses/bootstrap/compare/v0.3.2...v0.3.3) (2025-06-27)
+
 ## [0.3.2](https://github.com/benjymoses/bootstrap/compare/v0.3.1...v0.3.2) (2025-06-27)
 
 ### &nbsp;&nbsp;&nbsp;Features
