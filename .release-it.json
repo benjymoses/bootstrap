@@ -13,6 +13,10 @@
             "section": ":bug: Bug Fixes"
           },
           {
+            "type": "🐛 fix",
+            "section": ":bug: Bug Fixes with emoji"
+          },
+          {
             "type": "docs",
             "section": ":memo: Documentation"
           },
