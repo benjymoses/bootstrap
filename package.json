@@ -8,6 +8,10 @@
   "main": "lib/index.js",
   "type": "module",
   "packageManager": "pnpm@10.12.4",
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
   "scripts": {
     "build": "tsc && pnpm stage-templates && chmod +x lib/index.js",
     "dev": "concurrently \"tsc -w\" \"nodemon --watch templates --exec pnpm stage-templates --ext '*'\"",
@@ -35,7 +39,7 @@
     "README.md"
   ],
   "keywords": [],
-  "author": "",
+  "author": "benjymoses",
   "license": "MIT",
   "config": {
     "commitizen": {

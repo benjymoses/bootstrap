@@ -30,6 +30,12 @@
   },
   "git": {
     "commitMessage": "chore: release v${version}",
-    "tagName": "v${version}"
+    "tagName": "v${version}",
+    "commit": true,
+    "push": true
+  },
+  "npm": {
+    "publish": true,
+    "tag": "latest"
   }
 }
