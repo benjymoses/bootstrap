@@ -2,10 +2,6 @@
 
 ## [0.3.2](https://github.com/benjymoses/bootstrap/compare/v0.3.1...v0.3.2) (2025-06-27)
 
-# Changelog
-
-## 0.3.2
-
 ### &nbsp;&nbsp;&nbsp;Features
 
 - Fixed-up github actions ready for release &nbsp;-&nbsp; by **Ben Moses** [<samp>(f5848)</samp>](https://github.com/benjymoses/bootstrap/commit/f584898)
@@ -22,8 +18,6 @@
   - Added NODE_AUTH_TOKEN to actions &nbsp;-&nbsp; by **Ben Moses** [<samp>(6ceb4)</samp>](https://github.com/benjymoses/bootstrap/commit/6ceb427)
 
 ##### &nbsp;&nbsp;&nbsp;&nbsp;[View changes on GitHub](https://github.com/benjymoses/bootstrap/compare/v0.3.1...0.3.2)
-
-
 
 ## [0.3.1](https://github.com/benjymoses/bootstrap/compare/v0.3.0...v0.3.1) (2025-06-27)
 
