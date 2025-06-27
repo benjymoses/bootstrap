@@ -34,7 +34,7 @@ jobs:
           node-version: "22"
           cache: "pnpm"
       - name: Clean Install Dependencies
-        run: pnpm ci
+        run: pnpm install
       - name: Run NPM Release Script
         run: pnpm release
         env:
