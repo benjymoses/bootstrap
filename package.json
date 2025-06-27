@@ -11,7 +11,7 @@
   "scripts": {
     "build": "tsc && pnpm stage-templates && chmod +x lib/index.js",
     "dev": "concurrently \"tsc -w\" \"nodemon --watch templates --exec pnpm stage-templates --ext '*'\"",
-    "release": "pnpm build && npx -p @changesets/cli changeset publish",
+    "release": "pnpm build && pnpm release-it --ci",
     "relink": "pnpm unlink bootstrap && pnpm link",
     "stage-templates": "cp -r templates lib/",
     "start": "cd lib && npx plop",
