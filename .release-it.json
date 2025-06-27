@@ -2,7 +2,32 @@
   "plugins": {
     "@release-it/conventional-changelog": {
       "preset": {
-        "name": "conventionalcommits"
+        "name": "conventionalcommits",
+        "types": [
+          {
+            "type": "feat",
+            "section": ":sparkles: Features"
+          },
+          {
+            "type": "fix",
+            "section": ":bug: Bug Fixes"
+          },
+          {
+            "type": "docs",
+            "section": ":memo: Documentation"
+          },
+          {
+            "type": "chore",
+            "section": ":wrench: Chores"
+          },
+          {
+            "type": "refactor",
+            "section": ":recycle: Refactors"
+          }
+        ]
+      },
+      "parserOpts": {
+        "headerPattern": "/(\\w*)(?:\\(([\\w$@.\\-*/ ]*)\\))?: (.*)$/"
       },
       "infile": "CHANGELOG.md",
       "header": "# Bootstrap Changelog"
