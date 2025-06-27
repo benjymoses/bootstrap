@@ -33,6 +33,7 @@ jobs:
         with:
           node-version: "22"
           cache: "pnpm"
+          registry-url: "https://registry.npmjs.org"
       - name: Clean Install Dependencies
         run: pnpm install
       - name: Run NPM Release Script
