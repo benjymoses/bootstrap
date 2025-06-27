@@ -38,10 +38,13 @@
     "commitMessage": "chore: release v${version}",
     "tagName": "v${version}",
     "commit": true,
-    "push": true,
-    "publish": true
+    "push": true
   },
   "npm": {
     "publish": true
+  },
+  "github": {
+    "release": true,
+    "releaseName": "v${version}"
   }
 }
