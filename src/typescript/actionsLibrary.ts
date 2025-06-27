@@ -12,6 +12,7 @@ import { addTsx } from "./custom/addTsx.js";
 
 // Custom additional Actions
 import { addEsbuild } from "./custom/addEsbuild.js";
+import { installPnpm } from "./custom/installPnpm.js";
 
 export const bootstrapBasicActions = {
   generateTsconfig,
@@ -25,6 +26,7 @@ export const bootstrapCustomActions = {
   runGitCommands,
   addTsx,
   addHusky,
+  installPnpm,
 } as const;
 
 export const bootstrapAdditionalActions = {

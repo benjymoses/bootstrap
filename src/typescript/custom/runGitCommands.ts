@@ -33,4 +33,5 @@ const runGitCommandsActionList: BootstrapActionList = (
 export const runGitCommands: BootstrapAction = {
   actionsList: runGitCommandsActionList,
   actionSetup: runGitCommandsActionSetup,
+  name: ACTION_NAME,
 };

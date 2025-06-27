@@ -8,12 +8,12 @@ import type { BootstrapAnswers } from "../types/bootstrapAnswers.js";
 
 import { executeShellCommand } from "../utils/executeShellCommand.js";
 
-const ACTION_NAME = "add-ts-node";
+const ACTION_NAME = "add-tsx";
 
 const addTsxActionSetup: BootstrapActionSetup = (plop: NodePlopAPI) => {
   return plop.setActionType(ACTION_NAME, () => {
-    executeShellCommand(`npm pkg set devDependencies.tsx="^4.20.3" `);
-    executeShellCommand(`npm pkg set scripts.start="npx tsx src/index.ts"`);
+    executeShellCommand(`pnpm pkg set devDependencies.tsx="^4.20.3" `);
+    executeShellCommand(`pnpm pkg set scripts.start="pnpx tsx src/index.ts"`);
 
     return "Bringing in TSX...";
   });
@@ -37,4 +37,5 @@ const addTsxActionList: BootstrapActionList = (
 export const addTsx: BootstrapAction = {
   actionsList: addTsxActionList,
   actionSetup: addTsxActionSetup,
+  name: ACTION_NAME,
 };

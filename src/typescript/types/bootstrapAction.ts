@@ -11,4 +11,5 @@ export type BootstrapActionList = (
 export type BootstrapAction = {
   actionSetup: BootstrapActionSetup;
   actionsList: BootstrapActionList;
+  name: string;
 };

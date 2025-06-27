@@ -12,10 +12,10 @@ const ACTION_NAME = "add-husky";
 
 const addHuskyActionSetup: BootstrapActionSetup = (plop: NodePlopAPI) => {
   return plop.setActionType(ACTION_NAME, () => {
-    executeShellCommand(`npm pkg set devDependencies.husky="^9.1.7"`);
-    executeShellCommand(`npm pkg set scripts.prepare="husky"`);
+    executeShellCommand(`pnpm pkg set devDependencies.husky="^9.1.7"`);
+    executeShellCommand(`pnpm pkg set scripts.prepare="husky"`);
     executeShellCommand(
-      `npm pkg set husky.hooks.prepare-commit-msg="exec < /dev/tty && npx cz --hook || true"`
+      `pnpm pkg set husky.hooks.prepare-commit-msg="exec < /dev/tty && pnpx cz --hook || true"`
     );
 
     return "Bringing in Husky...";
@@ -46,4 +46,5 @@ const addHuskyActionList: BootstrapActionList = (
 export const addHusky: BootstrapAction = {
   actionSetup: addHuskyActionSetup,
   actionsList: addHuskyActionList,
+  name: ACTION_NAME,
 };

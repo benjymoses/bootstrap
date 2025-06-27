@@ -72,7 +72,7 @@ export default function (plop: NodePlopAPI) {
         default: "dist",
       },
     ],
-    actions: (answers:any) => {
+    actions: (answers: any) => {
       const actions = [];
       if (!answers) return [{ type: "abort" }];
 
@@ -146,7 +146,7 @@ export default function (plop: NodePlopAPI) {
       actions.push("");
       actions.push("");
       actions.push("================ REMEMBER ================");
-      actions.push("Run `npm install` to install dependencies");
+      actions.push("Run `pnpm install` to install dependencies");
       actions.push("==========================================");
 
       return actions;

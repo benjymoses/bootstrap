@@ -12,17 +12,17 @@ const ACTION_NAME = "add-vitest";
 
 const addVitestActionSetup: BootstrapActionSetup = (plop: NodePlopAPI) => {
   return plop.setActionType(ACTION_NAME, () => {
-    executeShellCommand(`npm pkg set scripts.test="vitest run"`);
-    executeShellCommand(`npm pkg set scripts.test:watch="vitest" `);
-    executeShellCommand(`npm pkg set scripts.test:ui="vitest --ui" `);
+    executeShellCommand(`pnpm pkg set scripts.test="vitest run"`);
+    executeShellCommand(`pnpm pkg set scripts.test:watch="vitest" `);
+    executeShellCommand(`pnpm pkg set scripts.test:ui="vitest --ui" `);
     executeShellCommand(
-      `npm pkg set scripts.test:coverage="vitest run --coverage" `
+      `pnpm pkg set scripts.test:coverage="vitest run --coverage" `
     );
-    executeShellCommand(`npm pkg set devDependencies.vitest="^3.0.7" `);
+    executeShellCommand(`pnpm pkg set devDependencies.vitest="^3.0.7" `);
     executeShellCommand(
-      `npm pkg set devDependencies.@vitest/coverage-istanbul="^3.0.7" `
+      `pnpm pkg set devDependencies.@vitest/coverage-istanbul="^3.0.7" `
     );
-    executeShellCommand(`npm pkg set devDependencies.@vitest/ui="^3.2.3"`);
+    executeShellCommand(`pnpm pkg set devDependencies.@vitest/ui="^3.2.3"`);
 
     return "Bringing in Vitest...";
   });
@@ -62,4 +62,5 @@ const addVitestActionList: BootstrapActionList = (
 export const addVitest: BootstrapAction = {
   actionsList: addVitestActionList,
   actionSetup: addVitestActionSetup,
+  name: ACTION_NAME,
 };

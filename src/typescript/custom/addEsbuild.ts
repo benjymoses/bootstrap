@@ -8,13 +8,13 @@ import type { BootstrapAnswers } from "../types/bootstrapAnswers.js";
 
 import { executeShellCommand } from "../utils/executeShellCommand.js";
 
-const ACTION_NAME = "add-ts-node";
+const ACTION_NAME = "add-esbuild";
 
 const addEsbuildActionSetup: BootstrapActionSetup = (plop: NodePlopAPI) => {
   return plop.setActionType(ACTION_NAME, () => {
-    executeShellCommand(`npm pkg set devDependencies.esbuild="^0.25.5" `);
+    executeShellCommand(`pnpm pkg set devDependencies.esbuild="^0.25.5" `);
     executeShellCommand(
-      `npm pkg set scripts.build="esbuild src/index.ts --bundle --outfile=dist/src.js"`
+      `pnpm pkg set scripts.build="esbuild src/index.ts --bundle --outfile=dist/src.js"`
     );
 
     return "Bringing in ESBuild...";
@@ -39,4 +39,5 @@ const addEsbuildActionList: BootstrapActionList = (
 export const addEsbuild: BootstrapAction = {
   actionsList: addEsbuildActionList,
   actionSetup: addEsbuildActionSetup,
+  name: ACTION_NAME,
 };
