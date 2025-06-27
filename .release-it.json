@@ -27,7 +27,8 @@
         ]
       },
       "parserOpts": {
-        "headerPattern": "/(?:.\\s)?(\\w*)(?:\\(([\\w$@.\\-*/ ]*)\\))?: (.*)$/"
+        "headerPattern": "(.\\s)?(\\w*)(?:\\(([\\w$@.\\-*/ ]*)\\))?: (.*)$",
+        "headerCorrespondence": ["emoji", "type", "scope", "subject"]
       },
       "infile": "CHANGELOG.md",
       "header": "# Bootstrap Changelog"
