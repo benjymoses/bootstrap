@@ -27,7 +27,7 @@
         ]
       },
       "parserOpts": {
-        "headerPattern": "/(\\w*)(?:\\(([\\w$@.\\-*/ ]*)\\))?: (.*)$/"
+        "headerPattern": "/(?:.\\s)?(\\w*)(?:\\(([\\w$@.\\-*/ ]*)\\))?: (.*)$/"
       },
       "infile": "CHANGELOG.md",
       "header": "# Bootstrap Changelog"
