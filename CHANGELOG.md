@@ -1,5 +1,12 @@
 # Bootstrap Changelog
 
+## [0.3.9](https://github.com/benjymoses/bootstrap/compare/v0.3.8...v0.3.9) (2025-06-28)
+
+### :memo: Documentation
+
+* **readme:** written initial version of README.md (re [#34](https://github.com/benjymoses/bootstrap/issues/34)) ([8da8b66](https://github.com/benjymoses/bootstrap/commit/8da8b6693c6c3ecd2242e7a24cf4de4802056389))
+* **todo:** moved todos to github issues and project ([35ed3c3](https://github.com/benjymoses/bootstrap/commit/35ed3c30f9fc75c68060c9774cd3e2a1fd9ba283))
+
 ## [0.3.8](https://github.com/benjymoses/bootstrap/compare/v0.3.7...v0.3.8) (2025-06-27)
 
 ### :bug: Bug Fixes
