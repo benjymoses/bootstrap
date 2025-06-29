@@ -1,74 +1,75 @@
 {
-  "name": "@benjymoses/bootstrap",
-  "bin": {
-    "bootstrap": "lib/index.js"
-  },
-  "version": "0.3.9",
-  "description": "Bootstraps projects with common settings I like",
-  "main": "lib/index.js",
-  "type": "module",
-  "packageManager": "pnpm@10.12.4",
-  "publishConfig": {
-    "access": "public",
-    "registry": "https://registry.npmjs.org/"
-  },
-  "scripts": {
-    "build": "tsc && pnpm stage-templates && chmod +x lib/index.js",
-    "dev": "concurrently \"tsc -w\" \"nodemon --watch templates --exec pnpm stage-templates --ext '*'\"",
-    "release": "pnpm build && pnpm release-it --ci",
-    "relink": "pnpm unlink bootstrap && pnpm link",
-    "stage-templates": "cp -r templates lib/",
-    "start": "cd lib && npx plop",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "commit": "cz",
-    "commitlint": "commitlint --edit",
-    "preinstall": "npx only-allow pnpm"
-  },
-  "tsup": {
-    "clean": true,
-    "souremap": true,
-    "splitting": false,
-    "entry": [
-      "src/index.ts"
-    ]
-  },
-  "files": [
-    "/lib",
-    "package.json",
-    "LICENSE",
-    "README.md"
-  ],
-  "keywords": [],
-  "author": "benjymoses",
-  "license": "MIT",
-  "config": {
-    "commitizen": {
-      "path": "./node_modules/cz-emoji-conventional",
-      "useGitmojis": true
-    }
-  },
-  "commitlint": {
-    "extends": [
-      "gitmoji"
-    ]
-  },
-  "dependencies": {
-    "minimist": "^1.2.8",
-    "plop": "^4.0.1"
-  },
-  "devDependencies": {
-    "@commitlint/cli": "^19.8.1",
-    "@release-it/conventional-changelog": "^10.0.1",
-    "@types/minimist": "^1.2.5",
-    "@types/node": "^22.15.19",
-    "commitizen": "^4.3.1",
-    "commitlint-config-gitmoji": "^2.3.1",
-    "concurrently": "^9.1.2",
-    "conventional-changelog": "^7.0.2",
-    "cz-emoji-conventional": "^1.2.1",
-    "release-it": "^19.0.3",
-    "release-it-pnpm": "^4.6.6",
-    "tsx": "^4.19.4",
-    "typescript": "^5.8.3"
-  }
+	"name": "@benjymoses/bootstrap",
+	"bin": {
+		"bootstrap": "lib/index.js"
+	},
+	"version": "0.3.9",
+	"description": "Bootstraps projects with common settings I like",
+	"main": "lib/index.js",
+	"type": "module",
+	"packageManager": "pnpm@10.12.4",
+	"publishConfig": {
+		"access": "public",
+		"registry": "https://registry.npmjs.org/"
+	},
+	"scripts": {
+		"build": "tsc && pnpm stage-templates && chmod +x lib/index.js",
+		"dev": "concurrently \"tsc -w\" \"nodemon --watch templates --exec pnpm stage-templates --ext '*'\"",
+		"release": "pnpm build && pnpm release-it --ci",
+		"relink": "pnpm unlink bootstrap && pnpm link",
+		"stage-templates": "cp -r templates lib/",
+		"start": "cd lib && npx plop",
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"commit": "cz",
+		"commitlint": "commitlint --edit",
+		"preinstall": "npx only-allow pnpm"
+	},
+	"tsup": {
+		"clean": true,
+		"souremap": true,
+		"splitting": false,
+		"entry": [
+			"src/index.ts"
+		]
+	},
+	"files": [
+		"/lib",
+		"package.json",
+		"LICENSE",
+		"README.md"
+	],
+	"keywords": [],
+	"author": "benjymoses",
+	"license": "MIT",
+	"config": {
+		"commitizen": {
+			"path": "./node_modules/cz-emoji-conventional",
+			"useGitmojis": true
+		}
+	},
+	"commitlint": {
+		"extends": [
+			"gitmoji"
+		]
+	},
+	"dependencies": {
+		"minimist": "^1.2.8",
+		"plop": "^4.0.1"
+	},
+	"devDependencies": {
+		"@biomejs/biome": "2.0.6",
+		"@commitlint/cli": "^19.8.1",
+		"@release-it/conventional-changelog": "^10.0.1",
+		"@types/minimist": "^1.2.5",
+		"@types/node": "^22.15.19",
+		"commitizen": "^4.3.1",
+		"commitlint-config-gitmoji": "^2.3.1",
+		"concurrently": "^9.1.2",
+		"conventional-changelog": "^7.0.2",
+		"cz-emoji-conventional": "^1.2.1",
+		"release-it": "^19.0.3",
+		"release-it-pnpm": "^4.6.6",
+		"tsx": "^4.19.4",
+		"typescript": "^5.8.3"
+	}
 }

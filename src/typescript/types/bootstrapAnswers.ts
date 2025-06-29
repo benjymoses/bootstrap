@@ -1,5 +1,5 @@
 export type BootstrapAnswers = {
-  projectName: string;
-  projectDescription: string;
-  outDir: string;
+	projectName: string;
+	projectDescription: string;
+	outDir: string;
 };
