@@ -4,12 +4,12 @@ import type { BootstrapAnswers } from "./bootstrapAnswers.js";
 export type BootstrapActionSetup = (plop: NodePlopAPI) => void;
 
 export type BootstrapActionList = (
-  path?: string,
-  answers?: BootstrapAnswers
+	path?: string,
+	answers?: BootstrapAnswers,
 ) => ActionType[];
 
 export type BootstrapAction = {
-  actionSetup: BootstrapActionSetup;
-  actionsList: BootstrapActionList;
-  name: string;
+	actionSetup: BootstrapActionSetup;
+	actionsList: BootstrapActionList;
+	name: string;
 };

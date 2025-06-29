@@ -15,20 +15,20 @@ import { addEsbuild } from "./custom/addEsbuild.js";
 import { installPnpm } from "./custom/installPnpm.js";
 
 export const bootstrapBasicActions = {
-  generateTsconfig,
-  generatePackageJson,
-  generateGitignore,
-  generateIndex,
+	generateTsconfig,
+	generatePackageJson,
+	generateGitignore,
+	generateIndex,
 } as const;
 
 export const bootstrapCustomActions = {
-  addVitest,
-  runGitCommands,
-  addTsx,
-  addHusky,
-  installPnpm,
+	addVitest,
+	runGitCommands,
+	addTsx,
+	addHusky,
+	installPnpm,
 } as const;
 
 export const bootstrapAdditionalActions = {
-  addEsbuild,
+	addEsbuild,
 } as const;
