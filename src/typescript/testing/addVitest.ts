@@ -41,26 +41,26 @@ const addVitestActionList: BootstrapActionList = (
 			type: ACTION_NAME,
 		},
 		{
-			type: "add",
+			data: {
+				outDir: answers.outDir,
+			},
 			path: `${path}/vitest.config.ts`,
 			templateFile: `./templates/ts/testing/vitest/vitest.config.ts.hbs`,
-			data: {
-				outDir: answers.outDir,
-			},
+			type: "add",
 		},
 		{
-			type: "add",
-			path: `${path}/tests/sampleTest.test.ts`,
-			templateFile: `./templates/ts/testing/vitest/sampleTest.test.ts.hbs`,
 			data: {
 				outDir: answers.outDir,
 			},
+			path: `${path}/tests/sampleTest.test.ts`,
+			templateFile: `./templates/ts/testing/vitest/sampleTest.test.ts.hbs`,
+			type: "add",
 		},
 	];
 };
 
 export const addVitest: BootstrapAction = {
-	actionsList: addVitestActionList,
 	actionSetup: addVitestActionSetup,
+	actionsList: addVitestActionList,
 	name: ACTION_NAME,
 };

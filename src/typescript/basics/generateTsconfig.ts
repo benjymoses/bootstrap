@@ -6,11 +6,11 @@ export const generateTsconfig = (
 	answers: BootstrapAnswers,
 ): ActionType => {
 	return {
-		type: "add",
-		path: `${path}/tsconfig.json`,
-		templateFile: `./templates/ts/basics/tsconfig.json.hbs`,
 		data: {
 			outDir: answers.outDir,
 		},
+		path: `${path}/tsconfig.json`,
+		templateFile: `./templates/ts/basics/tsconfig.json.hbs`,
+		type: "add",
 	};
 };

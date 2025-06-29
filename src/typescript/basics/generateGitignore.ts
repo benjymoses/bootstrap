@@ -6,11 +6,11 @@ export const generateGitignore = (
 	answers: BootstrapAnswers,
 ): ActionType => {
 	return {
-		type: "add",
-		path: `${path}/.gitignore`,
-		templateFile: `./templates/ts/basics/gitignore.hbs`,
 		data: {
 			outDir: answers.outDir,
 		},
+		path: `${path}/.gitignore`,
+		templateFile: `./templates/ts/basics/gitignore.hbs`,
+		type: "add",
 	};
 };

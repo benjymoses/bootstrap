@@ -1,50 +1,50 @@
 {
-	"plugins": {
-		"@release-it/conventional-changelog": {
-			"preset": {
-				"name": "conventionalcommits",
-				"types": [
-					{
-						"type": "feat",
-						"section": ":sparkles: Features"
-					},
-					{
-						"type": "fix",
-						"section": ":bug: Bug Fixes"
-					},
-					{
-						"type": "docs",
-						"section": ":memo: Documentation"
-					},
-					{
-						"type": "chore",
-						"section": ":wrench: Chores"
-					},
-					{
-						"type": "refactor",
-						"section": ":recycle: Refactors"
-					}
-				]
-			},
-			"parserOpts": {
-				"headerPattern": "(.\\s)?(\\w*)(?:\\(([\\w$@.\\-*/ ]*)\\))?: (.*)$",
-				"headerCorrespondence": ["emoji", "type", "scope", "subject"]
-			},
-			"infile": "CHANGELOG.md",
-			"header": "# Bootstrap Changelog"
-		}
-	},
 	"git": {
-		"commitMessage": "chore: release v${version}",
-		"tagName": "v${version}",
 		"commit": true,
-		"push": true
-	},
-	"npm": {
-		"publish": true
+		"commitMessage": "chore: release v${version}",
+		"push": true,
+		"tagName": "v${version}"
 	},
 	"github": {
 		"release": true,
 		"releaseName": "v${version}"
+	},
+	"npm": {
+		"publish": true
+	},
+	"plugins": {
+		"@release-it/conventional-changelog": {
+			"header": "# Bootstrap Changelog",
+			"infile": "CHANGELOG.md",
+			"parserOpts": {
+				"headerCorrespondence": ["emoji", "type", "scope", "subject"],
+				"headerPattern": "(.\\s)?(\\w*)(?:\\(([\\w$@.\\-*/ ]*)\\))?: (.*)$"
+			},
+			"preset": {
+				"name": "conventionalcommits",
+				"types": [
+					{
+						"section": ":sparkles: Features",
+						"type": "feat"
+					},
+					{
+						"section": ":bug: Bug Fixes",
+						"type": "fix"
+					},
+					{
+						"section": ":memo: Documentation",
+						"type": "docs"
+					},
+					{
+						"section": ":wrench: Chores",
+						"type": "chore"
+					},
+					{
+						"section": ":recycle: Refactors",
+						"type": "refactor"
+					}
+				]
+			}
+		}
 	}
 }

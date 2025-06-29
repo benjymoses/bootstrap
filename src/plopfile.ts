@@ -1,16 +1,14 @@
+// Set up pathing for Plop
+import path from "node:path";
 import type { NodePlopAPI } from "plop";
-
 // Bootstrap project actions
 import {
 	bootstrapBasicActions,
 	bootstrapCustomActions,
 } from "./typescript/actionsLibrary.js";
-
 // Shared type for prompt answers
 import type { BootstrapAnswers } from "./typescript/types/bootstrapAnswers.js";
 
-// Set up pathing for Plop
-import path from "node:path";
 const currentWorkingDirectory = process.cwd();
 const pathSuffix = path.basename(currentWorkingDirectory) === "lib" ? ".." : ""; // Back to root if in lib (build) folder during dev
 const workingPath = path.join(currentWorkingDirectory, pathSuffix);
@@ -25,53 +23,6 @@ export default function (plop: NodePlopAPI) {
 	}
 
 	plop.setGenerator("Which language are you working in?", {
-		prompts: [
-			{
-				type: "list",
-				name: "language",
-				message: "Choose a language:",
-				choices: [{ name: "TypeScript", value: "typescript" }],
-				default: "typescript",
-			},
-			{
-				type: "list",
-				name: "tsoperation",
-				message: "What do you want to do?",
-				choices: [
-					{ name: "Use recommended defaults", value: "use-defaults" },
-					{ name: "Select task stacks", value: "use-customised" },
-				],
-				when: (answers: any) => answers.language === "typescript",
-			},
-			{
-				type: "checkbox",
-				name: "customisations",
-				message: "Which customisations do you want?",
-				choices: [
-					{ name: "tsconfig.json", value: "generate-tsconfig" },
-					{ name: "package.json", value: "generate-packagejson" },
-					{ name: ".gitignore", value: "generate-gitignore" },
-					// { name: "Add Vitest with defaults", value: "generate-vitest" },
-				],
-				when: (answers: any) => answers.tsoperation === "use-customised",
-			},
-			{
-				type: "input",
-				name: "projectName",
-				message: "What is the name of your project? ", //TODO: consider what validation is needed
-			},
-			{
-				type: "input",
-				name: "projectDescription",
-				message: "Provide a short description of your project: ", //TODO: consider what validation is needed,
-			},
-			{
-				type: "input",
-				name: "outDir",
-				message: "Where do you want the output files to go? (default: dist)",
-				default: "dist",
-			},
-		],
 		actions: (answers: any) => {
 			const actions = [];
 			if (!answers) return [{ type: "abort" }];
@@ -151,5 +102,52 @@ export default function (plop: NodePlopAPI) {
 
 			return actions;
 		},
+		prompts: [
+			{
+				choices: [{ name: "TypeScript", value: "typescript" }],
+				default: "typescript",
+				message: "Choose a language:",
+				name: "language",
+				type: "list",
+			},
+			{
+				choices: [
+					{ name: "Use recommended defaults", value: "use-defaults" },
+					{ name: "Select task stacks", value: "use-customised" },
+				],
+				message: "What do you want to do?",
+				name: "tsoperation",
+				type: "list",
+				when: (answers: any) => answers.language === "typescript",
+			},
+			{
+				choices: [
+					{ name: "tsconfig.json", value: "generate-tsconfig" },
+					{ name: "package.json", value: "generate-packagejson" },
+					{ name: ".gitignore", value: "generate-gitignore" },
+					// { name: "Add Vitest with defaults", value: "generate-vitest" },
+				],
+				message: "Which customisations do you want?",
+				name: "customisations",
+				type: "checkbox",
+				when: (answers: any) => answers.tsoperation === "use-customised",
+			},
+			{
+				message: "What is the name of your project? ",
+				name: "projectName",
+				type: "input", //TODO: consider what validation is needed
+			},
+			{
+				message: "Provide a short description of your project: ",
+				name: "projectDescription",
+				type: "input", //TODO: consider what validation is needed,
+			},
+			{
+				default: "dist",
+				message: "Where do you want the output files to go? (default: dist)",
+				name: "outDir",
+				type: "input",
+			},
+		],
 	});
 }

@@ -35,10 +35,10 @@ const addHuskyActionList: BootstrapActionList = (
 			type: ACTION_NAME,
 		},
 		{
-			type: "addMany",
+			base: "./templates/ts/husky/",
 			destination: `${path}/.husky/`,
 			templateFiles: `./templates/ts/husky/**/**.hbs`,
-			base: "./templates/ts/husky/",
+			type: "addMany",
 		},
 	];
 };

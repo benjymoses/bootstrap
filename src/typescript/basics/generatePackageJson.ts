@@ -1,5 +1,5 @@
-import type { ActionType } from "plop";
 import { execSync } from "node:child_process";
+import type { ActionType } from "plop";
 import type { BootstrapAnswers } from "../types/bootstrapAnswers.js";
 
 // get git name from git config
@@ -18,14 +18,14 @@ export const generatePackageJson = (
 ): ActionType => {
 	const gitName = getGitName();
 	return {
-		type: "add",
+		data: {
+			authorName: gitName,
+			outDir: answers.outDir,
+			projectDescription: answers.projectDescription,
+			projectName: answers.projectName,
+		},
 		path: `${path}/package.json`,
 		templateFile: `./templates/ts/basics/package.json.hbs`,
-		data: {
-			projectName: answers.projectName,
-			projectDescription: answers.projectDescription,
-			outDir: answers.outDir,
-			authorName: gitName,
-		},
+		type: "add",
 	};
 };

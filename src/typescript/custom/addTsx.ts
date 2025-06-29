@@ -35,7 +35,7 @@ const addTsxActionList: BootstrapActionList = (
 };
 
 export const addTsx: BootstrapAction = {
-	actionsList: addTsxActionList,
 	actionSetup: addTsxActionSetup,
+	actionsList: addTsxActionList,
 	name: ACTION_NAME,
 };

@@ -1,3 +1,4 @@
+import { execSync } from "node:child_process";
 import type { NodePlopAPI } from "plop";
 import type {
 	BootstrapAction,
@@ -5,9 +6,7 @@ import type {
 	BootstrapActionSetup,
 } from "../types/bootstrapAction.js";
 import type { BootstrapAnswers } from "../types/bootstrapAnswers.js";
-
 import { executeShellCommand } from "../utils/executeShellCommand.js";
-import { execSync } from "node:child_process";
 
 const ACTION_NAME = "install PNPM";
 
@@ -49,7 +48,7 @@ const installPnpmActionList: BootstrapActionList = (
 };
 
 export const installPnpm: BootstrapAction = {
-	actionsList: installPnpmActionList,
 	actionSetup: installPnpmActionSetup,
+	actionsList: installPnpmActionList,
 	name: ACTION_NAME,
 };

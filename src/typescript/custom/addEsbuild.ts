@@ -37,7 +37,7 @@ const addEsbuildActionList: BootstrapActionList = (
 };
 
 export const addEsbuild: BootstrapAction = {
-	actionsList: addEsbuildActionList,
 	actionSetup: addEsbuildActionSetup,
+	actionsList: addEsbuildActionList,
 	name: ACTION_NAME,
 };

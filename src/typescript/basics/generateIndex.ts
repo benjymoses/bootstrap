@@ -6,11 +6,11 @@ export const generateIndex = (
 	answers: BootstrapAnswers,
 ): ActionType => {
 	return {
-		type: "add",
-		path: `${path}/src/index.ts`,
-		templateFile: `./templates/ts/basics/index.ts.hbs`,
 		data: {
 			projectName: answers.projectName,
 		},
+		path: `${path}/src/index.ts`,
+		templateFile: `./templates/ts/basics/index.ts.hbs`,
+		type: "add",
 	};
 };

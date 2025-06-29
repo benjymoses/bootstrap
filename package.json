@@ -1,70 +1,24 @@
 {
-	"name": "@benjymoses/bootstrap",
+	"author": "benjymoses",
 	"bin": {
 		"bootstrap": "lib/index.js"
-	},
-	"version": "0.3.11",
-	"description": "Bootstraps projects with common settings I like",
-	"main": "lib/index.js",
-	"type": "module",
-	"packageManager": "pnpm@10.12.4",
-	"publishConfig": {
-		"access": "public",
-		"registry": "https://registry.npmjs.org/"
-	},
-	"scripts": {
-		"build": "tsc && pnpm stage-templates && chmod +x lib/index.js",
-		"dev": "concurrently \"tsc -w\" \"nodemon --watch templates --exec pnpm stage-templates --ext '*'\"",
-		"release": "pnpm build && pnpm release-it --ci",
-		"relink": "pnpm unlink bootstrap && pnpm link",
-		"stage-templates": "cp -r templates lib/",
-		"lint": "biome lint --write --unsafe --no-errors-on-unmatched",
-		"check": "biome check --write --unsafe --no-errors-on-unmatched",
-		"format": "biome format --write --unsafe --no-errors-on-unmatched",
-		"start": "cd lib && npx plop",
-		"test": "echo \"Error: no test specified\" && exit 1",
-		"commit": "cz",
-		"commitlint": "commitlint --edit",
-		"preinstall": "npx only-allow pnpm",
-		"prepare": "husky"
-	},
-	"lint-staged": {
-		"*.{js,ts,cjs,mjs,d.cts,d.mts,jsx,tsx,json,jsonc}": [
-			"biome check --write --unsafe --no-errors-on-unmatched"
-		]
-	},
-	"tsup": {
-		"clean": true,
-		"souremap": true,
-		"splitting": false,
-		"entry": [
-			"src/index.ts"
-		]
-	},
-	"files": [
-		"/lib",
-		"package.json",
-		"LICENSE",
-		"README.md"
-	],
-	"keywords": [],
-	"author": "benjymoses",
-	"license": "MIT",
-	"config": {
-		"commitizen": {
-			"path": "./node_modules/cz-emoji-conventional",
-			"useGitmojis": true
-		}
 	},
 	"commitlint": {
 		"extends": [
 			"gitmoji"
 		]
 	},
+	"config": {
+		"commitizen": {
+			"path": "./node_modules/cz-emoji-conventional",
+			"useGitmojis": true
+		}
+	},
 	"dependencies": {
 		"minimist": "^1.2.8",
 		"plop": "^4.0.1"
 	},
+	"description": "Bootstraps projects with common settings I like",
 	"devDependencies": {
 		"@biomejs/biome": "2.0.6",
 		"@commitlint/cli": "^19.8.1",
@@ -82,5 +36,51 @@
 		"release-it-pnpm": "^4.6.6",
 		"tsx": "^4.19.4",
 		"typescript": "^5.8.3"
-	}
+	},
+	"files": [
+		"/lib",
+		"package.json",
+		"LICENSE",
+		"README.md"
+	],
+	"keywords": [],
+	"license": "MIT",
+	"lint-staged": {
+		"*.{js,ts,cjs,mjs,d.cts,d.mts,jsx,tsx,json,jsonc}": [
+			"biome check --write --unsafe --no-errors-on-unmatched"
+		]
+	},
+	"main": "lib/index.js",
+	"name": "@benjymoses/bootstrap",
+	"packageManager": "pnpm@10.12.4",
+	"publishConfig": {
+		"access": "public",
+		"registry": "https://registry.npmjs.org/"
+	},
+	"scripts": {
+		"build": "tsc && pnpm stage-templates && chmod +x lib/index.js",
+		"check": "biome check --write --unsafe --no-errors-on-unmatched",
+		"commit": "cz",
+		"commitlint": "commitlint --edit",
+		"dev": "concurrently \"tsc -w\" \"nodemon --watch templates --exec pnpm stage-templates --ext '*'\"",
+		"format": "biome format --write --unsafe --no-errors-on-unmatched",
+		"lint": "biome lint --write --unsafe --no-errors-on-unmatched",
+		"preinstall": "npx only-allow pnpm",
+		"prepare": "husky",
+		"release": "pnpm build && pnpm release-it --ci",
+		"relink": "pnpm unlink bootstrap && pnpm link",
+		"stage-templates": "cp -r templates lib/",
+		"start": "cd lib && npx plop",
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"tsup": {
+		"clean": true,
+		"entry": [
+			"src/index.ts"
+		],
+		"souremap": true,
+		"splitting": false
+	},
+	"type": "module",
+	"version": "0.3.10"
 }
