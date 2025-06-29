@@ -1,5 +1,13 @@
 # Bootstrap Changelog
 
+## [0.3.12](https://github.com/benjymoses/bootstrap/compare/v0.3.11...v0.3.12) (2025-06-29)
+
+### :bug: Bug Fixes
+
+* **ci:** lint CI settings updated ([20069d5](https://github.com/benjymoses/bootstrap/commit/20069d5529a1b0eae59435611d1a44d6725f483f))
+* **lint:** repeated re-lint and format of project after config fix ([2e8aca3](https://github.com/benjymoses/bootstrap/commit/2e8aca31170238995cbe80c172b8045aa759cd06))
+* **packaage:** version sync ([e125795](https://github.com/benjymoses/bootstrap/commit/e12579545a1366d6d538dde44580ad80d4d15818))
+
 ## [0.3.11](https://github.com/benjymoses/bootstrap/compare/v0.3.10...v0.3.11) (2025-06-29)
 
 ### :sparkles: Features
