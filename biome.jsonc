@@ -55,6 +55,6 @@
 	"vcs": {
 		"clientKind": "git",
 		"enabled": false,
-		"useIgnoreFile": false
+		"useIgnoreFile": true
 	}
 }
