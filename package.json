@@ -18,11 +18,20 @@
 		"release": "pnpm build && pnpm release-it --ci",
 		"relink": "pnpm unlink bootstrap && pnpm link",
 		"stage-templates": "cp -r templates lib/",
+		"lint": "biome lint --write --unsafe --no-errors-on-unmatched",
+		"check": "biome check --write --unsafe --no-errors-on-unmatched",
+		"format": "biome format --write --unsafe --no-errors-on-unmatched",
 		"start": "cd lib && npx plop",
 		"test": "echo \"Error: no test specified\" && exit 1",
 		"commit": "cz",
 		"commitlint": "commitlint --edit",
-		"preinstall": "npx only-allow pnpm"
+		"preinstall": "npx only-allow pnpm",
+		"prepare": "husky"
+	},
+	"lint-staged": {
+		"*.{js,ts,cjs,mjs,d.cts,d.mts,jsx,tsx,json,jsonc}": [
+			"biome check --write --unsafe --no-errors-on-unmatched"
+		]
 	},
 	"tsup": {
 		"clean": true,
@@ -67,6 +76,8 @@
 		"concurrently": "^9.1.2",
 		"conventional-changelog": "^7.0.2",
 		"cz-emoji-conventional": "^1.2.1",
+		"husky": "^9.1.7",
+		"lint-staged": "^16.1.2",
 		"release-it": "^19.0.3",
 		"release-it-pnpm": "^4.6.6",
 		"tsx": "^4.19.4",
