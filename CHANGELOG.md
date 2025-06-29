@@ -1,5 +1,11 @@
 # Bootstrap Changelog
 
+## [0.3.13](https://github.com/benjymoses/bootstrap/compare/v0.3.12...v0.3.13) (2025-06-29)
+
+### :sparkles: Features
+
+* added Biome generator (re [#38](https://github.com/benjymoses/bootstrap/issues/38)) ([666ea27](https://github.com/benjymoses/bootstrap/commit/666ea27b08f3c1e7936dcf10157e522365df051f))
+
 ## [0.3.12](https://github.com/benjymoses/bootstrap/compare/v0.3.11...v0.3.12) (2025-06-29)
 
 ### :bug: Bug Fixes
