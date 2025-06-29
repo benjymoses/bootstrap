@@ -3,7 +3,7 @@
 	"bin": {
 		"bootstrap": "lib/index.js"
 	},
-	"version": "0.3.9",
+	"version": "0.3.10",
 	"description": "Bootstraps projects with common settings I like",
 	"main": "lib/index.js",
 	"type": "module",

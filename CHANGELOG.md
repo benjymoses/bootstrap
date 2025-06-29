@@ -1,5 +1,19 @@
 # Bootstrap Changelog
 
+## [0.3.10](https://github.com/benjymoses/bootstrap/compare/v0.3.9...v0.3.10) (2025-06-29)
+
+### :sparkles: Features
+
+* **lint:** added biome to replace estlint and prettier (re [#37](https://github.com/benjymoses/bootstrap/issues/37)) ([f5b5e05](https://github.com/benjymoses/bootstrap/commit/f5b5e05bc6041addd1052e61a4be500b63b281ff))
+
+### :bug: Bug Fixes
+
+* **lint:** added vscode settings to attempt disabling prettier and eslint (re [#37](https://github.com/benjymoses/bootstrap/issues/37)) ([ef50af2](https://github.com/benjymoses/bootstrap/commit/ef50af258cfb64cce08cb735c103869030f21f9a))
+
+### :wrench: Chores
+
+* **lint:** converted biome.json to .jsonc, added more explicit .vscode/settings.json (re [#37](https://github.com/benjymoses/bootstrap/issues/37)) ([e27c0a9](https://github.com/benjymoses/bootstrap/commit/e27c0a905c8c7b79470fa72bd5f282436caccbae))
+
 ## [0.3.9](https://github.com/benjymoses/bootstrap/compare/v0.3.8...v0.3.9) (2025-06-28)
 
 ### :memo: Documentation
