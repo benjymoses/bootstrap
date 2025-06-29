@@ -3,5 +3,7 @@
 		"source.action.useSortedKeys.biome": "explicit",
 		"source.action.sortImports.biome": "explicit",
 		"source.fixAll.biome": "explicit"
-	}
+	},
+	"eslint.format.enable": false,
+	"prettier.enable": false
 }
