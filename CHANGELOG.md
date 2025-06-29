@@ -1,5 +1,11 @@
 # Bootstrap Changelog
 
+## [0.3.11](https://github.com/benjymoses/bootstrap/compare/v0.3.10...v0.3.11) (2025-06-29)
+
+### :sparkles: Features
+
+* **lint:** added husky and lint-staged hooks for biome to base project ([ab71b12](https://github.com/benjymoses/bootstrap/commit/ab71b1252d974bc6e815a40e012f7d57452a0237))
+
 ## [0.3.10](https://github.com/benjymoses/bootstrap/compare/v0.3.9...v0.3.10) (2025-06-29)
 
 ### :sparkles: Features
