@@ -29,7 +29,7 @@
 		"rules": {
 			"recommended": true,
 			"suspicious": {
-				"noExplicitAny": "off"
+				"noExplicitAny": "off" // deliberately off because of Plop's TypeScript support
 			}
 		}
 	},
