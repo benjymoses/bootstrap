@@ -1,5 +1,11 @@
 # Bootstrap Changelog
 
+## [0.3.15](https://github.com/benjymoses/bootstrap/compare/v0.3.14...v0.3.15) (2025-07-01)
+
+### :bug: Bug Fixes
+
+* **linting:** added settings.json for vscode (re [#43](https://github.com/benjymoses/bootstrap/issues/43)) ([7404e13](https://github.com/benjymoses/bootstrap/commit/7404e137565272d39903f077faa7e61f665ad40c))
+
 ## [0.3.14](https://github.com/benjymoses/bootstrap/compare/v0.3.13...v0.3.14) (2025-07-01)
 
 ### :bug: Bug Fixes
