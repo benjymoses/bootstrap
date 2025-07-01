@@ -1,5 +1,11 @@
 # Bootstrap Changelog
 
+## [0.3.16](https://github.com/benjymoses/bootstrap/compare/v0.3.15...v0.3.16) (2025-07-01)
+
+### :bug: Bug Fixes
+
+* changed mechanism for package management (re [#41](https://github.com/benjymoses/bootstrap/issues/41)) ([ad9d099](https://github.com/benjymoses/bootstrap/commit/ad9d099f97f9b0fbf71ba75ca57cf2c3540f1245))
+
 ## [0.3.15](https://github.com/benjymoses/bootstrap/compare/v0.3.14...v0.3.15) (2025-07-01)
 
 ### :bug: Bug Fixes
