@@ -18,11 +18,11 @@ const addVitestActionSetup: BootstrapActionSetup = (plop: NodePlopAPI) => {
 		executeShellCommand(
 			`pnpm pkg set scripts.test:coverage="vitest run --coverage" `,
 		);
-		executeShellCommand(`pnpm pkg set devDependencies.vitest="^3.0.7" `);
+		executeShellCommand(`pnpm pkg set devDependencies.vitest="latest" `);
 		executeShellCommand(
-			`pnpm pkg set devDependencies.@vitest/coverage-istanbul="^3.0.7" `,
+			`pnpm pkg set devDependencies.@vitest/coverage-istanbul="latest" `,
 		);
-		executeShellCommand(`pnpm pkg set devDependencies.@vitest/ui="^3.2.3"`);
+		executeShellCommand(`pnpm pkg set devDependencies.@vitest/ui="latest"`);
 
 		return "Bringing in Vitest...";
 	});

@@ -12,7 +12,7 @@ const ACTION_NAME = "add-biome";
 
 const addBiomeActionSetup: BootstrapActionSetup = (plop: NodePlopAPI) => {
 	return plop.setActionType(ACTION_NAME, () => {
-		executeShellCommand(`pnpm pkg set devDependencies.@biomejs/biome="^2.0.6"`);
+		executeShellCommand(`pnpm pkg set devDependencies.@biomejs/biome="latest"`);
 		executeShellCommand(
 			`pnpm pkg set scripts.lint="biome check --write --unsafe --no-errors-on-unmatched"`,
 		);

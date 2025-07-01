@@ -4,17 +4,17 @@
     "description": "{{projectDescription}}",
     "main": "src/index.ts", 
     "type": "module", 
-    "scripts": { 
-        "commit": "cz",
-        "commitlint": "commitlint --edit",
-        "preinstall": "npx only-allow pnpm"
-
-    },
     "keywords": [],
     "author": {
         "name": "{{authorName}}"
     },
     "license": "MIT",
+    "scripts": {
+        "commit": "cz",
+        "commitlint": "commitlint --edit",
+        "preinstall": "npx only-allow pnpm"
+
+    },
     "config": {
         "commitizen": {
         "path": "./node_modules/cz-emoji-conventional",
@@ -24,19 +24,20 @@
     "commitlint": {
         "extends": ["gitmoji"]
     },
+    "husky": {},
     "pnpm": {
 		"onlyBuiltDependencies": [
 			"esbuild"
 		]
 	},
     "devDependencies": {
-        "@commitlint/cli": "^19.8.1",
-        "commitizen": "^4.3.1",
-        "commitlint-config-gitmoji": "^2.3.1",
-        "cz-emoji-conventional": "^1.2.1",
-        "conventional-changelog": "^7.0.2",
-        "typescript": "^5.8.3",
-        "eslint": "^9",
-        "@types/node": "^22.15.23"
+        "@commitlint/cli": "latest",
+        "commitizen": "latest",
+        "commitlint-config-gitmoji": "latest",
+        "cz-emoji-conventional": "latest",
+        "conventional-changelog": "latest",
+        "typescript": "latest",
+        "eslint": "latest",
+        "@types/node": "latest"
     }
 }

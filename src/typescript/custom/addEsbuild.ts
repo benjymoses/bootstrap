@@ -12,7 +12,7 @@ const ACTION_NAME = "add-esbuild";
 
 const addEsbuildActionSetup: BootstrapActionSetup = (plop: NodePlopAPI) => {
 	return plop.setActionType(ACTION_NAME, () => {
-		executeShellCommand(`pnpm pkg set devDependencies.esbuild="^0.25.5" `);
+		executeShellCommand(`pnpm pkg set devDependencies.esbuild="latest" `);
 		executeShellCommand(
 			`pnpm pkg set scripts.build="esbuild src/index.ts --bundle --outfile=dist/src.js"`,
 		);

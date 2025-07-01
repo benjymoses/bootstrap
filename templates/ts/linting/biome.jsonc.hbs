@@ -8,12 +8,12 @@
 				"useSortedKeys": "on"
 			}
 		},
-		"enabled": true
-	},
-	"files": {
-		"ignoreUnknown": false,
+		"enabled": true,
 		"includes": [
-			"**",
+			"src/**",
+			"tests/**",
+			"apps/**",
+			"packages/**",
 			"!**/node_modules/**",
 			"!**/dist/**",
 			"!**/lib/**",
@@ -23,8 +23,12 @@
 			"!**/cdk.outout/**"
 		]
 	},
+	"files": {
+		"ignoreUnknown": false
+	},
 	"formatter": {
 		"enabled": true,
+		"includes": ["**"],
 		"indentStyle": "tab",
 		"indentWidth": 2,
 		"lineWidth": 80
@@ -45,6 +49,19 @@
 	},
 	"linter": {
 		"enabled": true,
+		"includes": [
+			"src/**",
+			"tests/**",
+			"apps/**",
+			"packages/**",
+			"!**/node_modules/**",
+			"!**/dist/**",
+			"!**/lib/**",
+			"!**/coverage/**",
+			"!**/build/**",
+			"!**/out/**",
+			"!**/cdk.outout/**"
+		],
 		"rules": {
 			"recommended": true
 		}

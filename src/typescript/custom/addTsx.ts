@@ -12,7 +12,7 @@ const ACTION_NAME = "add-tsx";
 
 const addTsxActionSetup: BootstrapActionSetup = (plop: NodePlopAPI) => {
 	return plop.setActionType(ACTION_NAME, () => {
-		executeShellCommand(`pnpm pkg set devDependencies.tsx="^4.20.3" `);
+		executeShellCommand(`pnpm pkg set devDependencies.tsx="latest" `);
 		executeShellCommand(`pnpm pkg set scripts.start="pnpx tsx src/index.ts"`);
 
 		return "Bringing in TSX...";
