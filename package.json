@@ -53,6 +53,11 @@
 	"main": "lib/index.js",
 	"name": "@benjymoses/bootstrap",
 	"packageManager": "pnpm@10.12.4",
+	"pnpm": {
+		"onlyBuiltDependencies": [
+			"esbuild"
+		]
+	},
 	"publishConfig": {
 		"access": "public",
 		"registry": "https://registry.npmjs.org/"

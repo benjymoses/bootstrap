@@ -24,6 +24,11 @@
     "commitlint": {
         "extends": ["gitmoji"]
     },
+    "pnpm": {
+		"onlyBuiltDependencies": [
+			"esbuild"
+		]
+	},
     "devDependencies": {
         "@commitlint/cli": "^19.8.1",
         "commitizen": "^4.3.1",
