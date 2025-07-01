@@ -44,6 +44,11 @@ const addBiomeActionList: BootstrapActionList = (
 			templateFile: `./templates/ts/linting/biome.jsonc.hbs`,
 			type: "add",
 		},
+		{
+			path: `${path}/.vscode/settings.json`,
+			templateFile: `./templates/ts/linting/settings.json.hbs`,
+			type: "add",
+		},
 	];
 };
 
