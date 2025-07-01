@@ -1,5 +1,11 @@
 # Bootstrap Changelog
 
+## [0.3.14](https://github.com/benjymoses/bootstrap/compare/v0.3.13...v0.3.14) (2025-07-01)
+
+### :bug: Bug Fixes
+
+* **pnpm:** added pre-build permissions for eslint to package.json (re [#44](https://github.com/benjymoses/bootstrap/issues/44)) ([343b27c](https://github.com/benjymoses/bootstrap/commit/343b27c2c2ffde9e4d7c8c73b74c743a78606c28))
+
 ## [0.3.13](https://github.com/benjymoses/bootstrap/compare/v0.3.12...v0.3.13) (2025-06-29)
 
 ### :sparkles: Features
