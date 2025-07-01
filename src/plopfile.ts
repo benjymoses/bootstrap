@@ -46,7 +46,7 @@ export default function (plop: NodePlopAPI) {
 				for (const [key, customAction] of Object.entries(
 					bootstrapCustomActions,
 				)) {
-					if (key !== "runGitCommands") {
+					if (key !== "runGitCommands" && key !== "runCleanupCommands") {
 						actions.push(
 							...customAction.actionsList(workingPath, bootstrapAnswers),
 						);
@@ -89,16 +89,9 @@ export default function (plop: NodePlopAPI) {
 				}
 			}
 
-			// Always run git commands last
+			// Always run cleanup and git commands last
+			actions.push(...bootstrapCustomActions.runCleanupCommands.actionsList());
 			actions.push(...bootstrapCustomActions.runGitCommands.actionsList());
-
-			// Ending reminder to run `npm install`
-			actions.push("");
-			actions.push("");
-			actions.push("");
-			actions.push("================ REMEMBER ================");
-			actions.push("Run `pnpm install` to install dependencies");
-			actions.push("==========================================");
 
 			return actions;
 		},

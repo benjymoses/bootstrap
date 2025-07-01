@@ -8,6 +8,7 @@ import { addEsbuild } from "./custom/addEsbuild.js";
 import { addTsx } from "./custom/addTsx.js";
 import { addHusky } from "./custom/generateHusky.js";
 import { installPnpm } from "./custom/installPnpm.js";
+import { runCleanupCommands } from "./custom/runCleanupActions.js";
 import { runGitCommands } from "./custom/runGitCommands.js";
 import { addVitest } from "./testing/addVitest.js";
 
@@ -26,6 +27,7 @@ export const bootstrapCustomActions = {
 	addTsx,
 	addVitest,
 	installPnpm,
+	runCleanupCommands,
 	runGitCommands,
 } as const;
 

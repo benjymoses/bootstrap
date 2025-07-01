@@ -12,7 +12,7 @@ const ACTION_NAME = "add-husky";
 
 const addHuskyActionSetup: BootstrapActionSetup = (plop: NodePlopAPI) => {
 	return plop.setActionType(ACTION_NAME, () => {
-		executeShellCommand(`pnpm pkg set devDependencies.husky="^9.1.7"`);
+		executeShellCommand(`pnpm pkg set devDependencies.husky="latest"`);
 		executeShellCommand(`pnpm pkg set scripts.prepare="husky"`);
 		executeShellCommand(
 			`pnpm pkg set husky.hooks.prepare-commit-msg="exec < /dev/tty && pnpx cz --hook || true"`,
