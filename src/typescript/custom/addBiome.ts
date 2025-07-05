@@ -14,13 +14,22 @@ const addBiomeActionSetup: BootstrapActionSetup = (plop: NodePlopAPI) => {
 	return plop.setActionType(ACTION_NAME, () => {
 		executeShellCommand(`pnpm pkg set devDependencies.@biomejs/biome="latest"`);
 		executeShellCommand(
-			`pnpm pkg set scripts.lint="biome check --write --unsafe --no-errors-on-unmatched"`,
+			`pnpm pkg set scripts.lint="biome check --no-errors-on-unmatched"`,
 		);
 		executeShellCommand(
-			`pnpm pkg set scripts.lint:lint="biome lint --write --unsafe --no-errors-on-unmatched"`,
+			`pnpm pkg set scripts.lint:lint="biome lint --no-errors-on-unmatched"`,
 		);
 		executeShellCommand(
-			`pnpm pkg set scripts.lint:format="biome format --write --unsafe --no-errors-on-unmatched"`,
+			`pnpm pkg set scripts.lint:format="biome format --no-errors-on-unmatched"`,
+		);
+		executeShellCommand(
+			`pnpm pkg set scripts.lint:fix="biome check --write --unsafe --no-errors-on-unmatched"`,
+		);
+		executeShellCommand(
+			`pnpm pkg set scripts.lint:lint:fix="biome lint --write --unsafe --no-errors-on-unmatched"`,
+		);
+		executeShellCommand(
+			`pnpm pkg set scripts.lint:format:fix="biome format --write --unsafe --no-errors-on-unmatched"`,
 		);
 
 		return "Bringing in Biome...";

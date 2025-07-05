@@ -1,0 +1,19 @@
+{
+    "name": "@repo/vitest-config",
+    "type": "module",
+    "private": true,
+    "exports": {
+        "./base": "./dist/base-config.js"
+    },
+    "scripts": {
+        "build": "tsc",
+        "dev": "tsc --watch"
+    },
+    "devDependencies": {
+        "@repo/typescript-config": "workspace:*",
+        "@vitest/coverage-istanbul": "^3.0.7",
+        "@vitest/ui": "^3.2.3",
+        "jsdom": "^26.0.0",
+        "vitest": "^3.0.7"
+    }
+}

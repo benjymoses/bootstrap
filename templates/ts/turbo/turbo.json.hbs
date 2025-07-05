@@ -1,0 +1,38 @@
+{
+    "$schema": "https://turborepo.com/schema.json",
+    "tasks": {
+        "//#lint": {},
+        "//#lint:lint": {},
+        "//#lint:format": {},
+        "//#lint:fix": {
+            "cache": false
+        },
+        "//#lint:lint:fix": {
+            "cache": false
+        },
+        "//#lint:format:fix": {
+            "cache": false
+        },
+        "build": {
+            "dependsOn": ["^build"],
+            "inputs": ["$TURBO_DEFAULTS", ".env*"],
+            "outputs": ["dist/**", "build/**", ".next/**", "!.next/cache/**"]
+        },
+        "dev": {
+            "cache": false,
+            "persistent": true
+        },
+        "test": {
+            "dependsOn": ["^transit", "^test"]
+        },
+        "test:watcth": {
+            "cache": false,
+            "persistent": true,
+            "dependsOn": ["^transit", "^test:watch"]
+        },
+        "transit": {
+            "dependsOn": ["^transit"]
+        }
+    },
+    "ui": "tui"
+}

@@ -1,0 +1,43 @@
+import type { PlopTypes } from "@turbo/gen";
+
+export default function generator(plop: PlopTypes.NodePlopAPI) {
+    plop.setGenerator("Basic app template", {
+        description: "A basic templated app for this repo",
+        prompts: [
+        {
+            type: "input",
+            name: "title",
+            message: "What is the title of your new app?",
+        }],
+        actions: [
+            {
+                path: "{{ turbo.paths.root }}/apps/{{ dashCase title }}/package.json",
+                templateFile: "templates/package.json.hbs",
+                type: "add"
+            },
+            {
+                path: "{{ turbo.paths.root }}/apps/{{ dashCase title }}/tsconfig.json",
+                templateFile: "templates/tsconfig.json.hbs",
+                type: "add"
+            },
+            {
+                path: "{{ turbo.paths.root }}/apps/{{ dashCase title }}/README.md",
+                templateFile: "templates/readme.md.hbs",
+                type: "add"
+            },
+            {
+                path: "{{ turbo.paths.root }}/apps/{{ dashCase title }}/src/index.ts",
+                templateFile: "templates/index.ts.hbs",
+                type: "add"
+            },
+            {
+                path: "{{ turbo.paths.root }}/apps/{{ dashCase title }}/tests/sample-test.test.ts",
+                templateFile: "templates/sample-test.test.ts.hbs",
+                type: "add"
+            },
+            "=============== REMEMBER ===============",
+            "At the root of the project, run `pnpm i`",
+            "========================================"
+        ],
+    });
+}        
