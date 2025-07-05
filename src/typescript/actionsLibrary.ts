@@ -27,11 +27,15 @@ export const bootstrapCustomActions = {
 	addTsx,
 	addVitest,
 	installPnpm,
-	runCleanupCommands,
-	runGitCommands,
 } as const;
 
 // Additional custom actions that shouldn't be installed by default
 export const bootstrapAdditionalActions = {
 	addEsbuild,
+} as const;
+
+// Final actions to perform last
+export const bootstrapFinalActions = {
+	runCleanupCommands,
+	runGitCommands,
 } as const;
