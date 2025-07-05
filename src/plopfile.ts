@@ -1,145 +1,68 @@
-// Set up pathing for Plop
+import fs from "node:fs";
 import path from "node:path";
+import { fileURLToPath } from "node:url";
 import type { NodePlopAPI } from "plop";
-// Bootstrap project actions
+import { getNewTsProjectActions } from "./plop/newTsProjectActions.js";
+// Prompts
+import { newTsProjectPrompts } from "./plop/newTsProjectPrompts.js";
+// Import Actions requiring setup
 import {
-	bootstrapBasicActions,
-	bootstrapCustomActions,
+	bootstrapDefaultCustomActions,
+	bootstrapFinalActions,
+	bootstrapMonorepoActions,
 } from "./typescript/actionsLibrary.js";
-// Shared type for prompt answers
-import type { BootstrapAnswers } from "./typescript/types/bootstrapAnswers.js";
-
-const currentWorkingDirectory = process.cwd();
-const pathSuffix = path.basename(currentWorkingDirectory) === "lib" ? ".." : ""; // Back to root if in lib (build) folder during dev
-const workingPath = path.join(currentWorkingDirectory, pathSuffix);
 
 // Main Plop function for plopfile
 export default function (plop: NodePlopAPI) {
-	plop.setWelcomeMessage("Please choose from an option below");
+	plop.setWelcomeMessage(
+		"Welcome to Bootstrap. Pick an action to get started.",
+	);
 
-	// setup custom actions
-	for (const customAction of Object.values(bootstrapCustomActions)) {
+	// Get this Plopfile directory
+	const __filename = fileURLToPath(import.meta.url);
+	const __dirname = path.dirname(__filename);
+	// Register a custom 'copy' action type
+	plop.setActionType("copy", (answers, config, plop) => {
+		const src = path.resolve(__dirname, config.templateFile);
+		const dest = plop.renderString(config.path, answers);
+
+		// Read the source file as a buffer/string
+		const contents = fs.readFileSync(src);
+		// Ensure the destination directory exists
+		fs.mkdirSync(path.dirname(dest), { recursive: true });
+		// Write the file as-is
+		fs.writeFileSync(dest, contents);
+
+		return `Copied ${dest} with handlebars escape`;
+	});
+
+	// setup custom actions so they can be selected by "ActionType"
+	for (const customAction of Object.values(bootstrapDefaultCustomActions)) {
 		customAction.actionSetup(plop);
 	}
 
-	plop.setGenerator("Which language are you working in?", {
-		actions: (answers: any) => {
-			const actions = [];
-			if (!answers) return [{ type: "abort" }];
+	// setup monorepo actions so they can be selected by "ActionType"
+	for (const monoAction of Object.values(bootstrapMonorepoActions)) {
+		monoAction.actionSetup(plop);
+	}
 
-			if (
-				!answers.projectName ||
-				!answers.projectDescription ||
-				!answers.outDir
-			)
-				return [{ type: "abort" }];
+	// setpu final actions so they can be selected by "ActionType"
+	for (const finalAction of Object.values(bootstrapFinalActions)) {
+		finalAction.actionSetup(plop);
+	}
 
-			const bootstrapAnswers: BootstrapAnswers = answers as BootstrapAnswers;
+	plop.setGenerator("New TypeScript Project", {
+		actions: (answers: any) => getNewTsProjectActions(answers),
+		prompts: newTsProjectPrompts,
+	});
 
-			if (answers.tsoperation === "use-defaults") {
-				// Add all basic actions
-				for (const basicAction of Object.values(bootstrapBasicActions)) {
-					actions.push(basicAction(workingPath, bootstrapAnswers));
-				}
-
-				// Add all custom actions apart from git which must run last
-				for (const [key, customAction] of Object.entries(
-					bootstrapCustomActions,
-				)) {
-					if (key !== "runGitCommands" && key !== "runCleanupCommands") {
-						actions.push(
-							...customAction.actionsList(workingPath, bootstrapAnswers),
-						);
-					}
-				}
-			}
-
-			if (answers.tsoperation === "use-customised") {
-				if (answers.customisations.includes("generate-tsconfig")) {
-					actions.push(
-						bootstrapBasicActions.generateTsconfig(
-							workingPath,
-							bootstrapAnswers,
-						),
-					);
-				}
-				if (answers.customisations.includes("generate-packagejson")) {
-					actions.push(
-						bootstrapBasicActions.generatePackageJson(
-							workingPath,
-							bootstrapAnswers,
-						),
-					);
-				}
-				if (answers.customisations.includes("generate-gitignore")) {
-					actions.push(
-						bootstrapBasicActions.generateGitignore(
-							workingPath,
-							bootstrapAnswers,
-						),
-					);
-				}
-				if (answers.customisations.includes("generate-vitest")) {
-					actions.push(
-						...bootstrapCustomActions.addVitest.actionsList(
-							workingPath,
-							bootstrapAnswers,
-						),
-					);
-				}
-			}
-
-			// Always run cleanup and git commands last
-			actions.push(...bootstrapCustomActions.runCleanupCommands.actionsList());
-			actions.push(...bootstrapCustomActions.runGitCommands.actionsList());
-
-			return actions;
-		},
+	plop.setGenerator("Add to existing Project", {
+		actions: undefined,
 		prompts: [
 			{
-				choices: [{ name: "TypeScript", value: "typescript" }],
-				default: "typescript",
-				message: "Choose a language:",
-				name: "language",
-				type: "list",
-			},
-			{
-				choices: [
-					{ name: "Use recommended defaults", value: "use-defaults" },
-					{ name: "Select task stacks", value: "use-customised" },
-				],
-				message: "What do you want to do?",
-				name: "tsoperation",
-				type: "list",
-				when: (answers: any) => answers.language === "typescript",
-			},
-			{
-				choices: [
-					{ name: "tsconfig.json", value: "generate-tsconfig" },
-					{ name: "package.json", value: "generate-packagejson" },
-					{ name: ".gitignore", value: "generate-gitignore" },
-					// { name: "Add Vitest with defaults", value: "generate-vitest" },
-				],
-				message: "Which customisations do you want?",
-				name: "customisations",
-				type: "checkbox",
-				when: (answers: any) => answers.tsoperation === "use-customised",
-			},
-			{
-				message: "What is the name of your project? ",
-				name: "projectName",
-				type: "input", //TODO: consider what validation is needed
-			},
-			{
-				message: "Provide a short description of your project: ",
-				name: "projectDescription",
-				type: "input", //TODO: consider what validation is needed,
-			},
-			{
-				default: "dist",
-				message: "Where do you want the output files to go? (default: dist)",
-				name: "outDir",
-				type: "input",
+				message: "This generator is not yet implemented.",
+				name: "notImplemented",
+				type: "confirm",
 			},
 		],
 	});
