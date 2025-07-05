@@ -1,5 +1,16 @@
 # Bootstrap Changelog
 
+## [0.3.17](https://github.com/benjymoses/bootstrap/compare/v0.3.16...v0.3.17) (2025-07-05)
+
+### :sparkles: Features
+
+* added monorepo support (re [#32](https://github.com/benjymoses/bootstrap/issues/32)) ([2cf9047](https://github.com/benjymoses/bootstrap/commit/2cf904727290d4719361789484048a936ebbbe34))
+* scaffolded second generator ready to implement for existing projects ([5db24dd](https://github.com/benjymoses/bootstrap/commit/5db24dd4a04bf5667628f5f377d443e6dca7fe32))
+
+### :recycle: Refactors
+
+* refactored menus to be more modular (re [#21](https://github.com/benjymoses/bootstrap/issues/21)) ([9036c26](https://github.com/benjymoses/bootstrap/commit/9036c26632e051e097ff589d8807909a4aa4d4d4))
+
 ## [0.3.16](https://github.com/benjymoses/bootstrap/compare/v0.3.15...v0.3.16) (2025-07-01)
 
 ### :bug: Bug Fixes
