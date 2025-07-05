@@ -28,4 +28,15 @@ export default function (plop: NodePlopAPI) {
 		actions: (answers: any) => getNewTsProjectActions(answers),
 		prompts: newTsProjectPrompts,
 	});
+
+	plop.setGenerator("Add to existing Project", {
+		actions: undefined,
+		prompts: [
+			{
+				message: "This generator is not yet implemented.",
+				name: "notImplemented",
+				type: "confirm",
+			},
+		],
+	});
 }
