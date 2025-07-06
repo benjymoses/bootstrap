@@ -1,5 +1,11 @@
 # Bootstrap Changelog
 
+## [0.3.21](https://github.com/benjymoses/bootstrap/compare/v0.3.20...v0.3.21) (2025-07-06)
+
+### :bug: Bug Fixes
+
+* hbs errors in turbo gen templates ([886198c](https://github.com/benjymoses/bootstrap/commit/886198c29b63a39aea718a69dfb858a077dcf478))
+
 ## [0.3.20](https://github.com/benjymoses/bootstrap/compare/v0.3.19...v0.3.20) (2025-07-06)
 
 ### :bug: Bug Fixes
