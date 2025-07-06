@@ -25,7 +25,7 @@ export default function (plop: NodePlopAPI) {
 	plop.setActionType("copy", (answers, config, plop) => {
 		try {
 			const src = path.resolve(__dirname, config.templateFile);
-			console.log(`Attempting to copy from: ${src}`);
+			//console.log(`Attempting to copy from: ${src}`);
 
 			if (!fs.existsSync(src)) {
 				throw new Error(`Template file not found: ${src}`);
@@ -36,7 +36,7 @@ export default function (plop: NodePlopAPI) {
 			fs.mkdirSync(path.dirname(dest), { recursive: true });
 			fs.writeFileSync(dest, contents);
 
-			return `Copied ${dest} with handlebars escape`;
+			return `Copied ${config.path} with handlebars escape`;
 		} catch (error) {
 			console.error(`Copy action failed:`, error);
 			throw error;
