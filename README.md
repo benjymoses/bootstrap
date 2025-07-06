@@ -24,15 +24,6 @@ Simply run Bootstrap, select your language and project choices, answer any promp
 
 There are 2 options for how to use this tool. To quickly run it, you can directly execute the package, or you can install the package globally for frequent convenient use.
 
-### Just run it
-
-> [!NOTE]
-> If you're using PNPM use `pnpx`.
-
-```bash
-   npx @benjymoses/bootstrap
-```
-
 ### Install globally and run locally
 
 ```bash
@@ -51,7 +42,7 @@ At your terminal run `bootstrap`
 
 When running Bootstrap, you'll be asked a minimal set of prompted questions based on your selections. These are used to populate relevant generated files.
 
-:package: Basic project configuration
+### :package: Basic project configuration
 
 - **package.json**: my defaults for ES Modules, and installs [PNPM](https://pnpm.io/) if it's not already installed
 - **tsconfig.json**: my default preferences including es2023 and DOM in the 'lib'
@@ -59,20 +50,30 @@ When running Bootstrap, you'll be asked a minimal set of prompted questions base
 - **scripts**: creates common scripts within package.json with defaults for added options
 - **src/index.ts**: provides a sample TypeScript file to quickly validate execution and testing frameworks
 
-:truck: Additional packages
+### :truck: Additional packages
 
 - **[Commitizen](https://commitizen-tools.github.io/commitizen/)**: for conventional commits with Gitmoji support
 - **[Husky](https://typicode.github.io/husky/)**: with default Git hooks to enforce conventional commits from Commitizen
 - **[TSX](https://tsx.is/)**: for directly executing TypeScript without a manual transpilation to JavaScript
 - **[ESBuild](https://esbuild.github.io/)**: for bundling and minification of distribution assets
 
-:test_tube: Testing frameworks
+### :test_tube: Testing frameworks
 
 - **[Vitest](https://vitest.dev/)**: fast testing framework compatible with Jest
 
-:card_file_box: Local Git repository
+### :seedling: Monorepo support
+
+- **[Turborepo](https://turborepo.com/)**: for monorepo management, script coordination, and caching
+- **[Turborepo Generators](https://turborepo.com/docs/guides/generating-code)**: for creating new applications with the monorepo from templates
+- **Centralised packages**: centralises the TypeScript and Vitest config as packages
+- **[PNPM Workspace](https://pnpm.io/workspaces)**: to execute PNPM across apps and packages
+- **Everything else**: all of the other defaults from a regular Bootstrap repo
+
+### :card_file_box: Local Git repository
 
 - **initial commit**: repository starts with a main branch and once Bootstrap has finished installing your packages will perform an initial commit so you're ready to get started
+
+
 
 ## Principles
 
