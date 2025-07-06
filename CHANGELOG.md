@@ -1,5 +1,11 @@
 # Bootstrap Changelog
 
+## [0.3.22](https://github.com/benjymoses/bootstrap/compare/v0.3.21...v0.3.22) (2025-07-06)
+
+### :bug: Bug Fixes
+
+* debugging built package ([1f0adc7](https://github.com/benjymoses/bootstrap/commit/1f0adc7e58c630ec46b62ef11e2eba9f34bd9d9c))
+
 ## [0.3.21](https://github.com/benjymoses/bootstrap/compare/v0.3.20...v0.3.21) (2025-07-06)
 
 ### :bug: Bug Fixes
