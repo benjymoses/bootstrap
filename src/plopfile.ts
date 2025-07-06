@@ -23,17 +23,24 @@ export default function (plop: NodePlopAPI) {
 	const __dirname = path.dirname(__filename);
 	// Register a custom 'copy' action type
 	plop.setActionType("copy", (answers, config, plop) => {
-		const src = path.resolve(__dirname, config.templateFile);
-		const dest = plop.renderString(config.path, answers);
+		try {
+			const src = path.resolve(__dirname, config.templateFile);
+			console.log(`Attempting to copy from: ${src}`);
 
-		// Read the source file as a buffer/string
-		const contents = fs.readFileSync(src);
-		// Ensure the destination directory exists
-		fs.mkdirSync(path.dirname(dest), { recursive: true });
-		// Write the file as-is
-		fs.writeFileSync(dest, contents);
+			if (!fs.existsSync(src)) {
+				throw new Error(`Template file not found: ${src}`);
+			}
 
-		return `Copied ${dest} with handlebars escape`;
+			const dest = plop.renderString(config.path, answers);
+			const contents = fs.readFileSync(src);
+			fs.mkdirSync(path.dirname(dest), { recursive: true });
+			fs.writeFileSync(dest, contents);
+
+			return `Copied ${dest} with handlebars escape`;
+		} catch (error) {
+			console.error(`Copy action failed:`, error);
+			throw error;
+		}
 	});
 
 	// setup custom actions so they can be selected by "ActionType"
