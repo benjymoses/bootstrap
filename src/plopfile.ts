@@ -36,7 +36,7 @@ export default function (plop: NodePlopAPI) {
 			fs.mkdirSync(path.dirname(dest), { recursive: true });
 			fs.writeFileSync(dest, contents);
 
-			return `Copied ${config.path} with handlebars escape`;
+			return `Copied ${path.relative(process.cwd(), config.path)} with handlebars escape`;
 		} catch (error) {
 			console.error(`Copy action failed:`, error);
 			throw error;
