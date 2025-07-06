@@ -14,5 +14,6 @@
 		"target": "es2022"
 	},
 	"display": "Node LTS (22)",
-	"exclude": ["lib", "node_modules", "templates"]
+	"exclude": ["lib", "node_modules", "templates", "tests"],
+	"include": ["src/**/*"]
 }

@@ -67,7 +67,7 @@
 		"registry": "https://registry.npmjs.org/"
 	},
 	"scripts": {
-		"build": "tsc && pnpm stage-templates && chmod +x lib/index.js",
+		"build": "tsc && pnpm stage-templates && ls -la lib/ && chmod +x lib/index.js",
 		"check": "biome check --write --unsafe --no-errors-on-unmatched",
 		"commit": "cz",
 		"commitlint": "commitlint --edit",
