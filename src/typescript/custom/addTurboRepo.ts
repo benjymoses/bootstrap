@@ -15,7 +15,7 @@ const addTurboRepoActionSetup: BootstrapActionSetup = (plop: NodePlopAPI) => {
 		executeShellCommand(`pnpm pkg set devDependencies.@turbo/gen="latest"`);
 		executeShellCommand(`pnpm pkg set devDependencies.turbo="latest"`);
 		executeShellCommand(`pnpm pkg set engines.node=">=18"`);
-		executeShellCommand(`pnpm pkg set packageManager="pnpm@9.0.0"`);
+		executeShellCommand(`pnpm pkg set packageManager="pnpm@10.0.0"`);
 		executeShellCommand(`pnpm pkg set private=true`);
 		executeShellCommand(`pnpm pkg set scripts.build="turbo run build"`);
 		executeShellCommand(`pnpm pkg set scripts.dev="turbo run dev"`);
