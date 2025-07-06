@@ -1,5 +1,11 @@
 # Bootstrap Changelog
 
+## [0.3.24](https://github.com/benjymoses/bootstrap/compare/v0.3.23...v0.3.24) (2025-07-06)
+
+### :bug: Bug Fixes
+
+* changed path return for copy action to relative path ([ba86324](https://github.com/benjymoses/bootstrap/commit/ba863249c2c6ca0b57d82cb5110cf154cef93a3f))
+
 ## [0.3.23](https://github.com/benjymoses/bootstrap/compare/v0.3.22...v0.3.23) (2025-07-06)
 
 ### :bug: Bug Fixes
