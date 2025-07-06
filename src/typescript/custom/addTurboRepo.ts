@@ -45,7 +45,7 @@ const addTurboRepoActionList: BootstrapActionList = (
 		{
 			path: `${path}/turbo/generators/package.json`,
 			templateFile: `./templates/ts/turbo/generators/package.json.hbs`,
-			type: "add",
+			type: "copy",
 		},
 		{
 			path: `${path}/turbo/generators/config.ts`,
@@ -60,22 +60,22 @@ const addTurboRepoActionList: BootstrapActionList = (
 		{
 			path: `${path}/turbo/generators/templates/tsconfig.json.hbs`,
 			templateFile: `./templates/ts/turbo/generators/templates/tsconfig.json.hbs`,
-			type: "add",
+			type: "copy",
 		},
 		{
 			path: `${path}/turbo/generators/templates/readme.md.hbs`,
 			templateFile: `./templates/ts/turbo/generators/templates/readme.md.hbs`,
-			type: "add",
+			type: "copy",
 		},
 		{
 			path: `${path}/turbo/generators/templates/index.ts.hbs`,
 			templateFile: `./templates/ts/turbo/generators/templates/index.ts.hbs`,
-			type: "add",
+			type: "copy",
 		},
 		{
 			path: `${path}/turbo/generators/templates/sample-test.test.ts.hbs`,
 			templateFile: `./templates/ts/turbo/generators/templates/sample-test.test.ts.hbs`,
-			type: "add",
+			type: "copy",
 		},
 	];
 
