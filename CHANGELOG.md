@@ -1,5 +1,11 @@
 # Bootstrap Changelog
 
+## [0.3.26](https://github.com/benjymoses/bootstrap/compare/v0.3.25...v0.3.26) (2025-07-06)
+
+### :bug: Bug Fixes
+
+* bumped pnpm version in monorepo package.json to support new global repo ([b0849f7](https://github.com/benjymoses/bootstrap/commit/b0849f75961554973c833fc9d5ceb6825d94a773))
+
 ## [0.3.25](https://github.com/benjymoses/bootstrap/compare/v0.3.24...v0.3.25) (2025-07-06)
 
 ### :bug: Bug Fixes
