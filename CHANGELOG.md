@@ -1,5 +1,15 @@
 # Bootstrap Changelog
 
+## [0.3.18](https://github.com/benjymoses/bootstrap/compare/v0.3.17...v0.3.18) (2025-07-06)
+
+### :bug: Bug Fixes
+
+* debugging github actions ([e183496](https://github.com/benjymoses/bootstrap/commit/e1834960caf8c6c467d2cd587d24f2e246ca2369))
+
+### :memo: Documentation
+
+* updated readme to reflect monorepo ([b400bb1](https://github.com/benjymoses/bootstrap/commit/b400bb162a5bf6e9b5b3432850d83a7de6dcfd08))
+
 ## [0.3.17](https://github.com/benjymoses/bootstrap/compare/v0.3.16...v0.3.17) (2025-07-05)
 
 ### :sparkles: Features
