@@ -1,5 +1,11 @@
 # Bootstrap Changelog
 
+## [0.3.19](https://github.com/benjymoses/bootstrap/compare/v0.3.18...v0.3.19) (2025-07-06)
+
+### :bug: Bug Fixes
+
+* fixed handlebars error in mono gens ([7eaa262](https://github.com/benjymoses/bootstrap/commit/7eaa262f82736e043548645ea7419d7ca0316e68))
+
 ## [0.3.18](https://github.com/benjymoses/bootstrap/compare/v0.3.17...v0.3.18) (2025-07-06)
 
 ### :bug: Bug Fixes
