@@ -83,12 +83,12 @@ const addTurboRepoActionList: BootstrapActionList = (
 		{
 			path: `${path}/packages/typescript-config/base.json`,
 			templateFile: `./templates/ts/basics/tsconfig.json.hbs`,
-			type: "add",
+			type: "copy",
 		},
 		{
 			path: `${path}/packages/typescript-config/package.json`,
 			templateFile: `./templates/ts/turbo/tsconfig/package.json.hbs`,
-			type: "add",
+			type: "copy",
 		},
 	];
 
@@ -96,17 +96,17 @@ const addTurboRepoActionList: BootstrapActionList = (
 		{
 			path: `${path}/packages/vitest-config/package.json`,
 			templateFile: `./templates/ts/turbo/vitest/package.json.hbs`,
-			type: "add",
+			type: "copy",
 		},
 		{
 			path: `${path}/packages/vitest-config/tsconfig.json`,
 			templateFile: `./templates/ts/turbo/vitest/tsconfig.json.hbs`,
-			type: "add",
+			type: "copy",
 		},
 		{
 			path: `${path}/packages/vitest-config/configs/base-config.ts`,
 			templateFile: `./templates/ts/turbo/vitest/base-config.ts.hbs`,
-			type: "add",
+			type: "copy",
 		},
 	];
 
