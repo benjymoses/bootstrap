@@ -1,5 +1,11 @@
 # Bootstrap Changelog
 
+## [0.3.25](https://github.com/benjymoses/bootstrap/compare/v0.3.24...v0.3.25) (2025-07-06)
+
+### :bug: Bug Fixes
+
+* changed file copy banner ([3f347cc](https://github.com/benjymoses/bootstrap/commit/3f347cc6e62515d984e4132a47c978b970a53c49))
+
 ## [0.3.24](https://github.com/benjymoses/bootstrap/compare/v0.3.23...v0.3.24) (2025-07-06)
 
 ### :bug: Bug Fixes
