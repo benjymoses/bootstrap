@@ -1,5 +1,11 @@
 # Bootstrap Changelog
 
+## [0.3.23](https://github.com/benjymoses/bootstrap/compare/v0.3.22...v0.3.23) (2025-07-06)
+
+### :bug: Bug Fixes
+
+* fixed publishing copy problem ([1e72f04](https://github.com/benjymoses/bootstrap/commit/1e72f04c6f33e6b915822a767a62c9af2983ce26))
+
 ## [0.3.22](https://github.com/benjymoses/bootstrap/compare/v0.3.21...v0.3.22) (2025-07-06)
 
 ### :bug: Bug Fixes
